@@ -332,28 +332,72 @@
 
     /* Resources Section */
     .resources { background: var(--off-white); }
-    .resources-filters {
+
+    .level-tabs {
       display: flex;
-      gap: 8px;
+      gap: 10px;
       flex-wrap: wrap;
-      margin-bottom: 28px;
+      margin-bottom: 16px;
     }
-    .filter-btn {
+    .level-tab {
       background: white;
-      border: 1.5px solid var(--light-gray);
+      border: 2px solid var(--light-gray);
       color: var(--gray);
-      padding: 7px 16px;
-      border-radius: 20px;
-      font-size: 13px;
-      font-weight: 500;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
       cursor: pointer;
       transition: all 0.2s;
     }
-    .filter-btn.active, .filter-btn:hover {
+    .level-tab.active, .level-tab:hover {
       background: var(--green-dark);
       border-color: var(--green-dark);
       color: white;
     }
+
+    .type-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 28px;
+      border-bottom: 2px solid var(--light-gray);
+      padding-bottom: 0;
+    }
+    .type-tab {
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      color: var(--gray);
+      padding: 10px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+      border-radius: 6px 6px 0 0;
+    }
+    .type-tab.active {
+      color: var(--green-dark);
+      border-bottom-color: var(--green-accent);
+      background: white;
+    }
+    .type-tab:hover { color: var(--green-dark); }
+
+    .empty-state {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+      color: var(--gray);
+      text-align: center;
+      gap: 12px;
+    }
+    .empty-state i { font-size: 48px; opacity: 0.3; }
+    .empty-state p { font-size: 15px; }
+
     .resources-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -380,7 +424,6 @@
     }
     .resource-file-icon.pdf { background: #fdecea; color: #c0392b; }
     .resource-file-icon.doc { background: #e8f0fe; color: #2563eb; }
-    .resource-file-icon.vid { background: #fce4ec; color: #c0392b; }
     .resource-meta { flex: 1; }
     .resource-meta h4 { font-size: 15px; font-weight: 600; color: var(--green-dark); margin-bottom: 4px; line-height: 1.4; }
     .resource-meta p { font-size: 13px; color: var(--gray); }
@@ -607,20 +650,37 @@
   <div class="container">
     <div class="section-label">Downloads</div>
     <div class="section-title">Study materials</div>
-    <div class="section-sub">Click any resource below to open or download it. All materials are free and CBC-aligned.</div>
+    <div class="section-sub">Select your level, then choose what you need. All materials are free and CBC-aligned.</div>
 
-    <div class="resources-filters">
-      <button class="filter-btn active" onclick="filterResources('all', this)">All</button>
-      <button class="filter-btn" onclick="filterResources('primary', this)">Primary (1–6)</button>
-      <button class="filter-btn" onclick="filterResources('junior', this)">Junior Secondary (7–9)</button>
-      <button class="filter-btn" onclick="filterResources('senior', this)">Senior Secondary (10–12)</button>
+    <!-- Level Tabs -->
+    <div class="level-tabs">
+      <button class="level-tab active" onclick="setLevel('primary', this)">📘 Primary (1–6)</button>
+      <button class="level-tab" onclick="setLevel('junior', this)">📗 Junior Secondary (7–9)</button>
+      <button class="level-tab" onclick="setLevel('senior', this)">📕 Senior Secondary (10–12)</button>
     </div>
 
+    <!-- Type Tabs -->
+    <div class="type-tabs">
+      <button class="type-tab active" onclick="setType('notes', this)"><i class="ti ti-file-text"></i> Notes</button>
+      <button class="type-tab" onclick="setType('cats', this)"><i class="ti ti-clipboard-check"></i> CATs</button>
+      <button class="type-tab" onclick="setType('exams', this)"><i class="ti ti-file-certificate"></i> Exams</button>
+    </div>
+
+    <!-- Empty state -->
+    <div class="empty-state" id="emptyState" style="display:none;">
+      <i class="ti ti-folder-open"></i>
+      <p>No materials here yet — check back soon!</p>
+    </div>
+
+    <!-- Resources Grid -->
     <div class="resources-grid" id="resourcesGrid">
 
-      <!-- ✏️ ADD YOUR RESOURCES BELOW — copy a card and change the link, title, subject, and level -->
+      <!-- ✏️ ADD CARDS BELOW
+           data-level: primary | junior | senior
+           data-type:  notes | cats | exams
+      -->
 
-      <div class="resource-card" data-level="senior">
+      <div class="resource-card" data-level="senior" data-type="cats">
         <div class="resource-card-top">
           <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
           <div class="resource-meta">
@@ -637,86 +697,41 @@
         </a>
       </div>
 
-      <div class="resource-card" data-level="junior">
-        <div class="resource-card-top">
-          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
-          <div class="resource-meta">
-            <h4>Grade 7 Mathematics Notes</h4>
-            <p>Term 1 — Numbers & Operations</p>
-          </div>
-        </div>
-        <div class="resource-tags">
-          <span class="resource-tag junior">Junior Secondary</span>
-          <span class="resource-tag">Mathematics</span>
-        </div>
-        <a href="YOUR-GOOGLE-DRIVE-LINK-HERE" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
-      </div>
-
-      <div class="resource-card" data-level="junior">
-        <div class="resource-card-top">
-          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
-          <div class="resource-meta">
-            <h4>Grade 8 English Notes</h4>
-            <p>Term 1 — Reading & Comprehension</p>
-          </div>
-        </div>
-        <div class="resource-tags">
-          <span class="resource-tag junior">Junior Secondary</span>
-          <span class="resource-tag">English</span>
-        </div>
-        <a href="YOUR-GOOGLE-DRIVE-LINK-HERE" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
-      </div>
-
-      <div class="resource-card" data-level="primary">
-        <div class="resource-card-top">
-          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
-          <div class="resource-meta">
-            <h4>Grade 5 Science Notes</h4>
-            <p>Term 2 — Living Things</p>
-          </div>
-        </div>
-        <div class="resource-tags">
-          <span class="resource-tag primary">Primary</span>
-          <span class="resource-tag">Science</span>
-        </div>
-        <a href="YOUR-GOOGLE-DRIVE-LINK-HERE" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
-      </div>
-
-      <div class="resource-card" data-level="junior">
-        <div class="resource-card-top">
-          <div class="resource-file-icon doc"><i class="ti ti-clipboard-check"></i></div>
-          <div class="resource-meta">
-            <h4>Grade 9 End of Term Exam</h4>
-            <p>Mathematics — Past Paper</p>
-          </div>
-        </div>
-        <div class="resource-tags">
-          <span class="resource-tag junior">Junior Secondary</span>
-          <span class="resource-tag">Past Paper</span>
-        </div>
-        <a href="YOUR-GOOGLE-DRIVE-LINK-HERE" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
-      </div>
-
     </div>
   </div>
 </section>
 
 <script>
-  function filterResources(level, btn) {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  let currentLevel = 'primary';
+  let currentType = 'notes';
+
+  function setLevel(level, btn) {
+    currentLevel = level;
+    document.querySelectorAll('.level-tab').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    document.querySelectorAll('.resource-card').forEach(card => {
-      card.style.display = (level === 'all' || card.dataset.level === level) ? '' : 'none';
-    });
+    filterCards();
   }
+
+  function setType(type, btn) {
+    currentType = type;
+    document.querySelectorAll('.type-tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    filterCards();
+  }
+
+  function filterCards() {
+    const cards = document.querySelectorAll('.resource-card');
+    let visible = 0;
+    cards.forEach(card => {
+      const match = card.dataset.level === currentLevel && card.dataset.type === currentType;
+      card.style.display = match ? '' : 'none';
+      if (match) visible++;
+    });
+    document.getElementById('emptyState').style.display = visible === 0 ? 'flex' : 'none';
+  }
+
+  // Init on load
+  filterCards();
 </script>
 
 <!-- YouTube -->
