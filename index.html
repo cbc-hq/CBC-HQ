@@ -90,6 +90,51 @@
     .nav-cta:hover { background: #219a52 !important; }
     .hamburger { display: none; background: none; border: none; color: white; font-size: 24px; cursor: pointer; }
 
+    /* Auth button in nav */
+    .nav-auth-btn {
+      display: flex; align-items: center; gap: 8px;
+      background: white; color: var(--green-dark) !important;
+      padding: 7px 14px; border-radius: 7px;
+      font-size: 13px; font-weight: 600;
+      cursor: pointer; border: none; transition: background 0.2s;
+    }
+    .nav-auth-btn:hover { background: #f0f0f0; }
+    .nav-user-menu { display: flex; align-items: center; gap: 10px; }
+    .nav-user-avatar { width: 34px; height: 34px; border-radius: 50%; border: 2px solid var(--green-accent); cursor: pointer; }
+    .nav-user-name { font-size: 13px; color: rgba(255,255,255,0.85); font-weight: 500; }
+    .nav-signout-btn {
+      background: rgba(255,255,255,0.12); color: white; border: none;
+      padding: 6px 12px; border-radius: 6px; font-size: 12px;
+      cursor: pointer; transition: background 0.2s;
+    }
+    .nav-signout-btn:hover { background: rgba(255,255,255,0.22); }
+
+    /* Auth gate modal */
+    .auth-modal-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.6); z-index: 1000;
+      align-items: center; justify-content: center; padding: 1rem;
+    }
+    .auth-modal-overlay.open { display: flex; }
+    .auth-modal {
+      background: white; border-radius: 20px; padding: 40px 32px;
+      max-width: 400px; width: 100%; text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+      animation: modalIn 0.25s ease;
+    }
+    .auth-modal-logo { font-size: 42px; margin-bottom: 12px; }
+    .auth-modal h2 { font-size: 22px; font-weight: 700; color: var(--green-dark); margin-bottom: 10px; }
+    .auth-modal p { font-size: 14px; color: var(--gray); line-height: 1.7; margin-bottom: 28px; }
+    .google-signin-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      background: white; color: #444; border: 1.5px solid #ddd; border-radius: 10px;
+      padding: 13px 24px; font-size: 15px; font-weight: 600;
+      cursor: pointer; width: 100%; transition: background 0.2s, box-shadow 0.2s;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+    .google-signin-btn:hover { background: #f8f8f8; box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+    .google-signin-btn svg { width: 20px; height: 20px; flex-shrink: 0; }
+
     .hero {
       background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 55%, var(--green-light) 100%);
       color: white;
@@ -596,7 +641,12 @@
     <li><a href="#">Levels</a></li>
     <li><a href="#">About</a></li>
   </ul>
-  <a href="#" class="nav-cta">Get started</a>
+  <div id="navAuthArea">
+    <button class="nav-auth-btn" onclick="openAuthModal()">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="18" height="18"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
+      Sign in
+    </button>
+  </div>
   <button class="hamburger" aria-label="Open menu"><i class="ti ti-menu-2"></i></button>
 </nav>
 
@@ -1019,21 +1069,34 @@
       link.addEventListener('click', function (e) {
         e.preventDefault();
         pendingDownloadUrl = this.getAttribute('href');
-        document.getElementById('subscribeModal').classList.add('open');
+        const user = window._currentUser ? window._currentUser() : null;
+        if (!user) {
+          window._pendingDownloadAfterAuth = true;
+          document.getElementById('authModal').classList.add('open');
+        } else {
+          document.getElementById('subscribeModal').classList.add('open');
+        }
       });
     });
   });
+
+  function openAuthModal() {
+    document.getElementById('authModal').classList.add('open');
+  }
 
   function closeModal() {
     document.getElementById('subscribeModal').classList.remove('open');
     pendingDownloadUrl = null;
   }
 
-  function confirmDownload() {
-    if (pendingDownloadUrl) {
-      window.open(pendingDownloadUrl, '_blank');
-    }
-    closeModal();
+  function subscribeAndDownload() {
+    window.open('https://www.youtube.com/@CBCHQ-q2m', '_blank');
+    setTimeout(function () {
+      if (pendingDownloadUrl) {
+        window.open(pendingDownloadUrl, '_blank');
+      }
+      closeModal();
+    }, 1500);
   }
 
   // Close modal when clicking outside
@@ -1064,14 +1127,8 @@
       <div class="step-card">
         <div class="step-number">3</div>
         <div class="step-icon"><i class="ti ti-brand-youtube"></i></div>
-        <h3>Subscribe on YouTube</h3>
-        <p>Click "Subscribe Now" in the popup to visit our YouTube channel and subscribe — it's free and takes 2 seconds!</p>
-      </div>
-      <div class="step-card">
-        <div class="step-number">4</div>
-        <div class="step-icon"><i class="ti ti-circle-check"></i></div>
-        <h3>Confirm & download</h3>
-        <p>Once subscribed, come back and click "I've Subscribed ✅" to unlock the download link and access your document.</p>
+        <h3>Subscribe & download</h3>
+        <p>Click "Subscribe on YouTube & Download" — your YouTube channel opens to subscribe, and your document downloads automatically!</p>
       </div>
     </div>
   </div>
@@ -1139,16 +1196,88 @@
     <h2>Subscribe to unlock this download</h2>
     <p>CBC HQ materials are free! We just ask that you subscribe to our YouTube channel where we post video lessons, exam tips, and more for Kenyan students.</p>
     <div class="modal-actions">
-      <a href="https://www.youtube.com/@CBCHQ-q2m" target="_blank" class="modal-subscribe-btn">
-        <i class="ti ti-brand-youtube"></i> Subscribe on YouTube
-      </a>
-      <span class="modal-divider">— already subscribed? —</span>
-      <button class="modal-confirm-btn" onclick="confirmDownload()">
-        <i class="ti ti-circle-check"></i> I've Subscribed ✅ — Download now
+      <button class="modal-subscribe-btn" onclick="subscribeAndDownload()">
+        <i class="ti ti-brand-youtube"></i> Subscribe on YouTube & Download
       </button>
     </div>
   </div>
 </div>
+<!-- Auth Gate Modal -->
+<div class="auth-modal-overlay" id="authModal">
+  <div class="auth-modal">
+    <div class="auth-modal-logo">📚</div>
+    <h2>Sign in to download</h2>
+    <p>Create a free CBC HQ account to access all study materials. Sign in with your Google account — it only takes a second!</p>
+    <button class="google-signin-btn" onclick="signInWithGoogle()">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
+      Continue with Google
+    </button>
+  </div>
+</div>
+
+<!-- Firebase SDK -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged }
+    from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyCqcyPoSuxfS8f6kxIyubS3gjiAHVFJcwk",
+    authDomain: "cbc-hq-83252.firebaseapp.com",
+    projectId: "cbc-hq-83252",
+    storageBucket: "cbc-hq-83252.firebasestorage.app",
+    messagingSenderId: "715864331652",
+    appId: "1:715864331652:web:e30198723c33cc1f84f9d1",
+    measurementId: "G-VF7D83FNZ9"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+
+  let currentUser = null;
+
+  // Watch auth state
+  onAuthStateChanged(auth, (user) => {
+    currentUser = user;
+    const navAuthArea = document.getElementById('navAuthArea');
+    if (user) {
+      navAuthArea.innerHTML = `
+        <div class="nav-user-menu">
+          <img class="nav-user-avatar" src="${user.photoURL}" alt="${user.displayName}" title="${user.displayName}" />
+          <span class="nav-user-name">${user.displayName.split(' ')[0]}</span>
+          <button class="nav-signout-btn" id="signOutBtn">Sign out</button>
+        </div>`;
+      document.getElementById('signOutBtn').addEventListener('click', () => {
+        signOut(auth);
+      });
+    } else {
+      navAuthArea.innerHTML = `
+        <button class="nav-auth-btn" id="signInNavBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="18" height="18"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
+          Sign in
+        </button>`;
+      document.getElementById('signInNavBtn').addEventListener('click', openAuthModal);
+    }
+  });
+
+  // Expose functions to global scope
+  window.signInWithGoogle = async function () {
+    try {
+      await signInWithPopup(auth, provider);
+      document.getElementById('authModal').classList.remove('open');
+      // If there was a pending download, trigger subscribe modal
+      if (window._pendingDownloadAfterAuth) {
+        window._pendingDownloadAfterAuth = false;
+        document.getElementById('subscribeModal').classList.add('open');
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  window._currentUser = () => currentUser;
+</script>
 
 </body>
 </html>
