@@ -490,6 +490,96 @@
       .stats-bar { gap: 24px; }
       .section-title { font-size: 24px; }
     }
+
+    /* ── Subscribe Modal ── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal {
+      background: white;
+      border-radius: 20px;
+      padding: 36px 32px;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+      position: relative;
+      animation: modalIn 0.25s ease;
+    }
+    @keyframes modalIn {
+      from { opacity: 0; transform: scale(0.93) translateY(12px); }
+      to   { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .modal-close {
+      position: absolute;
+      top: 14px; right: 16px;
+      background: none; border: none;
+      font-size: 22px; cursor: pointer;
+      color: var(--gray);
+      line-height: 1;
+    }
+    .modal-close:hover { color: var(--black); }
+    .modal-yt-icon { font-size: 52px; color: #ff4444; margin-bottom: 12px; }
+    .modal h2 { font-size: 20px; font-weight: 700; color: var(--green-dark); margin-bottom: 10px; }
+    .modal p { font-size: 14px; color: var(--gray); line-height: 1.7; margin-bottom: 24px; }
+    .modal-actions { display: flex; flex-direction: column; gap: 10px; }
+    .modal-subscribe-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      background: #ff4444; color: white;
+      border: none; border-radius: 10px;
+      padding: 13px 20px; font-size: 15px; font-weight: 600;
+      cursor: pointer; text-decoration: none;
+      transition: background 0.2s;
+    }
+    .modal-subscribe-btn:hover { background: #cc0000; }
+    .modal-confirm-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      background: var(--green-accent); color: white;
+      border: none; border-radius: 10px;
+      padding: 13px 20px; font-size: 15px; font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .modal-confirm-btn:hover { background: #219a52; }
+    .modal-divider { font-size: 12px; color: #aaa; }
+
+    /* ── How to Download Section ── */
+    .how-to { background: white; }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      counter-reset: steps;
+    }
+    .step-card {
+      background: var(--off-white);
+      border-radius: 16px;
+      padding: 28px 22px;
+      position: relative;
+      border: 1px solid var(--light-gray);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .step-card:hover { border-color: var(--green-accent); transform: translateY(-2px); }
+    .step-number {
+      width: 36px; height: 36px;
+      background: var(--green-accent);
+      color: white;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .step-card h3 { font-size: 15px; font-weight: 700; color: var(--green-dark); margin-bottom: 8px; }
+    .step-card p { font-size: 13px; color: var(--gray); line-height: 1.6; }
+    .step-icon { font-size: 22px; color: var(--green-light); margin-bottom: 10px; }
   </style>
 </head>
 <body>
@@ -895,6 +985,7 @@
 <script>
   let currentLevel = 'primary';
   let currentType = 'notes';
+  let pendingDownloadUrl = null;
 
   function setLevel(level, btn) {
     currentLevel = level;
@@ -921,9 +1012,70 @@
     document.getElementById('emptyState').style.display = visible === 0 ? 'flex' : 'none';
   }
 
-  // Init on load
-  filterCards();
+  // Intercept download clicks
+  document.addEventListener('DOMContentLoaded', function () {
+    filterCards();
+    document.querySelectorAll('.resource-download').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        pendingDownloadUrl = this.getAttribute('href');
+        document.getElementById('subscribeModal').classList.add('open');
+      });
+    });
+  });
+
+  function closeModal() {
+    document.getElementById('subscribeModal').classList.remove('open');
+    pendingDownloadUrl = null;
+  }
+
+  function confirmDownload() {
+    if (pendingDownloadUrl) {
+      window.open(pendingDownloadUrl, '_blank');
+    }
+    closeModal();
+  }
+
+  // Close modal when clicking outside
+  document.getElementById('subscribeModal').addEventListener('click', function (e) {
+    if (e.target === this) closeModal();
+  });
 </script>
+
+<!-- ── How to Download Section ── -->
+<section class="how-to">
+  <div class="container">
+    <div class="section-label">Getting started</div>
+    <div class="section-title">How to download materials</div>
+    <div class="section-sub">Follow these simple steps to access any study material on CBC HQ — it only takes a minute!</div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <div class="step-icon"><i class="ti ti-list-search"></i></div>
+        <h3>Browse & find</h3>
+        <p>Use the level tabs (Primary, Junior, Senior) and type tabs (Notes, CATs, Exams) to find the material you need.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <div class="step-icon"><i class="ti ti-download"></i></div>
+        <h3>Click Download PDF</h3>
+        <p>Click the green "Download PDF" button on any resource card. A popup will appear before the download begins.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <div class="step-icon"><i class="ti ti-brand-youtube"></i></div>
+        <h3>Subscribe on YouTube</h3>
+        <p>Click "Subscribe Now" in the popup to visit our YouTube channel and subscribe — it's free and takes 2 seconds!</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">4</div>
+        <div class="step-icon"><i class="ti ti-circle-check"></i></div>
+        <h3>Confirm & download</h3>
+        <p>Once subscribed, come back and click "I've Subscribed ✅" to unlock the download link and access your document.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- YouTube -->
 <section class="video-section">
@@ -979,6 +1131,24 @@
     © 2026 <span>CBC HQ</span> · Made with ❤️ for Kenyan students and teachers
   </div>
 </footer>
+<!-- ── Subscribe Modal ── -->
+<div class="modal-overlay" id="subscribeModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+    <div class="modal-yt-icon"><i class="ti ti-brand-youtube"></i></div>
+    <h2>Subscribe to unlock this download</h2>
+    <p>CBC HQ materials are free! We just ask that you subscribe to our YouTube channel where we post video lessons, exam tips, and more for Kenyan students.</p>
+    <div class="modal-actions">
+      <a href="https://www.youtube.com/@CBCHQ-q2m" target="_blank" class="modal-subscribe-btn">
+        <i class="ti ti-brand-youtube"></i> Subscribe on YouTube
+      </a>
+      <span class="modal-divider">— already subscribed? —</span>
+      <button class="modal-confirm-btn" onclick="confirmDownload()">
+        <i class="ti ti-circle-check"></i> I've Subscribed ✅ — Download now
+      </button>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
