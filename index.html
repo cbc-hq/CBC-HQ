@@ -344,6 +344,76 @@
     }
     .yt-btn:hover { background: #cc0000; }
 
+    /* Community cards row (YouTube + WhatsApp) */
+    .community-grid {
+      display: flex; gap: 24px; justify-content: center; flex-wrap: wrap;
+    }
+    .community-grid .yt-card { margin: 0; flex: 1 1 340px; max-width: 400px; }
+    .wa-icon { font-size: 52px; color: #25D366; }
+    .wa-btn {
+      background: #25D366; color: white; border: none;
+      padding: 13px 26px; border-radius: 8px;
+      font-size: 15px; font-weight: 500; cursor: pointer;
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 6px; transition: background 0.2s; text-decoration: none;
+    }
+    .wa-btn:hover { background: #1da851; }
+
+    /* "New" badge on recently added cards */
+    .resource-tag.new-badge {
+      background: var(--green-accent); color: white; font-weight: 700;
+    }
+
+    /* Search bar */
+    .search-bar {
+      position: relative; max-width: 420px; margin: 0 auto 28px;
+    }
+    .search-bar input {
+      width: 100%; padding: 12px 16px 12px 42px;
+      border: 1.5px solid var(--light-gray); border-radius: 10px;
+      font-size: 14px; outline: none; transition: border-color 0.2s;
+    }
+    .search-bar input:focus { border-color: var(--green-accent); }
+    .search-bar i {
+      position: absolute; left: 15px; top: 50%; transform: translateY(-50%);
+      color: var(--gray); font-size: 17px;
+    }
+
+    /* Request a document banner */
+    .request-doc-banner {
+      margin: 40px auto 0; max-width: 640px;
+      background: var(--off-white); border: 1px dashed var(--green-accent);
+      border-radius: 14px; padding: 22px 26px;
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .request-doc-banner p { font-size: 14px; color: var(--gray); }
+    .request-doc-banner p strong { color: var(--green-dark); display: block; font-size: 15px; margin-bottom: 2px; }
+    .request-doc-banner a {
+      background: #25D366; color: white; text-decoration: none;
+      padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 600;
+      display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
+    }
+
+    /* Privacy note under Google sign-in */
+    .auth-privacy-note {
+      font-size: 11.5px; color: #999; margin-top: 16px; line-height: 1.6;
+    }
+
+    /* About section */
+    .about-section { background: var(--off-white); }
+    .about-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px; max-width: 800px; margin: 0 auto;
+    }
+    .about-card {
+      background: white; border: 1px solid var(--light-gray); border-radius: 14px;
+      padding: 26px; text-align: center;
+    }
+    .about-card i { font-size: 30px; color: var(--green-light); margin-bottom: 12px; }
+    .about-card h3 { font-size: 15px; font-weight: 700; color: var(--green-dark); margin-bottom: 8px; }
+    .about-card p { font-size: 13.5px; color: var(--gray); line-height: 1.7; }
+
     footer {
       background: #050f09;
       color: rgba(255,255,255,0.55);
@@ -384,7 +454,7 @@
       flex-wrap: wrap;
       margin-bottom: 16px;
     }
-    .level-tab {
+    .level-tab, .t-level-tab {
       background: white;
       border: 2px solid var(--light-gray);
       color: var(--gray);
@@ -395,7 +465,8 @@
       cursor: pointer;
       transition: all 0.2s;
     }
-    .level-tab.active, .level-tab:hover {
+    .level-tab.active, .level-tab:hover,
+    .t-level-tab.active, .t-level-tab:hover {
       background: var(--green-dark);
       border-color: var(--green-dark);
       color: white;
@@ -408,7 +479,7 @@
       border-bottom: 2px solid var(--light-gray);
       padding-bottom: 0;
     }
-    .type-tab {
+    .type-tab, .t-type-tab {
       background: none;
       border: none;
       border-bottom: 3px solid transparent;
@@ -424,12 +495,12 @@
       transition: all 0.2s;
       border-radius: 6px 6px 0 0;
     }
-    .type-tab.active {
+    .type-tab.active, .t-type-tab.active {
       color: var(--green-dark);
       border-bottom-color: var(--green-accent);
       background: white;
     }
-    .type-tab:hover { color: var(--green-dark); }
+    .type-tab:hover, .t-type-tab:hover { color: var(--green-dark); }
 
     .empty-state {
       flex-direction: column;
@@ -640,7 +711,7 @@
     <li><a href="https://youtube.com/@cbchq-q2f?si=9rKxe6Xb1U5Kwz94" target="_blank">Videos</a></li>
     <li><a href="#">Levels</a></li>
     <li><a href="#teachers-corner">Teachers' Corner</a></li>
-    <li><a href="#">About</a></li>
+    <li><a href="#about">About</a></li>
   </ul>
   <div id="navAuthArea">
     <button class="nav-auth-btn" onclick="openAuthModal()">
@@ -657,7 +728,7 @@
   <a href="https://youtube.com/@cbchq-q2f?si=9rKxe6Xb1U5Kwz94" target="_blank">Videos</a>
   <a href="#">Levels</a>
   <a href="#teachers-corner">Teachers' Corner</a>
-  <a href="#">About</a>
+  <a href="#about">About</a>
   <a href="#" class="mob-cta">Get started</a>
 </div>
 
@@ -793,6 +864,12 @@
     <div class="section-label">Downloads</div>
     <div class="section-title">Study materials</div>
     <div class="section-sub">Select your level, then choose what you need. All materials are free and CBC-aligned.</div>
+
+    <!-- Search -->
+    <div class="search-bar">
+      <i class="ti ti-search"></i>
+      <input type="text" id="resourceSearch" placeholder="Search by title or subject…" oninput="filterCards()">
+    </div>
 
     <!-- Level Tabs -->
     <div class="level-tabs">
@@ -1182,6 +1259,7 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
           <span class="resource-tag">Physics</span>
+          <span class="resource-tag new-badge">New</span>
         </div>
         <a href="https://drive.google.com/file/d/1_EmFDMXWdb8lyl5hw1dIFRYkT1xPfonq/view?usp=drivesdk" target="_blank" class="resource-download">
           <i class="ti ti-download"></i> Download PDF
@@ -1196,6 +1274,7 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
           <span class="resource-tag">History</span>
+          <span class="resource-tag new-badge">New</span>
         </div>
         <a href="https://drive.google.com/file/d/1ikT1vyPTqr-sAutB4QQ2xe7pLZKLCVI1/view?usp=drivesdk" target="_blank" class="resource-download">
           <i class="ti ti-download"></i> Download PDF
@@ -1210,6 +1289,7 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
           <span class="resource-tag">Literature</span>
+          <span class="resource-tag new-badge">New</span>
         </div>
         <a href="https://drive.google.com/file/d/1SgrDAfPuetYMhcSxbgb_xaUv0fhG95wx/view?usp=drivesdk" target="_blank" class="resource-download">
           <i class="ti ti-download"></i> Download PDF
@@ -1224,6 +1304,7 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
           <span class="resource-tag">Geography</span>
+          <span class="resource-tag new-badge">New</span>
         </div>
         <a href="https://drive.google.com/file/d/1BoB0TJBZDdGMFkmOtCWlJTGrMrhBcfSH/view?usp=drivesdk" target="_blank" class="resource-download">
           <i class="ti ti-download"></i> Download PDF
@@ -1238,6 +1319,7 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
           <span class="resource-tag">Community Service</span>
+          <span class="resource-tag new-badge">New</span>
         </div>
         <a href="https://drive.google.com/file/d/1lOt-fEA3Gq6zJ8E7NJsoK0JeosiPzAnv/view?usp=drivesdk" target="_blank" class="resource-download">
           <i class="ti ti-download"></i> Download PDF
@@ -1252,6 +1334,7 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
           <span class="resource-tag">Chemistry</span>
+          <span class="resource-tag new-badge">New</span>
         </div>
         <a href="https://drive.google.com/file/d/11WfXhUrFNGTpujEh-Fgx10c19O7i3OZr/view?usp=drivesdk" target="_blank" class="resource-download">
           <i class="ti ti-download"></i> Download PDF
@@ -1499,6 +1582,12 @@
       </div>
 
     </div>
+
+    <!-- Request a document -->
+    <div class="request-doc-banner">
+      <p><strong>Can't find what you need?</strong>Tell us and we'll try to add it.</p>
+      <a href="https://whatsapp.com/channel/0029VbDIYlKJ93wTknUVlJ0A" target="_blank"><i class="ti ti-brand-whatsapp"></i> Request on WhatsApp</a>
+    </div>
   </div>
 </section>
 
@@ -1508,6 +1597,12 @@
     <div class="section-label">For educators</div>
     <div class="section-title">Teachers' Corner</div>
     <div class="section-sub">Schemes of work, lesson plans, and marking schemes for CBC teachers across Kenya — free to download.</div>
+
+    <!-- Search -->
+    <div class="search-bar">
+      <i class="ti ti-search"></i>
+      <input type="text" id="teacherSearch" placeholder="Search by title or subject…" oninput="filterTeacherCards()">
+    </div>
 
     <!-- Level Tabs -->
     <div class="level-tabs">
@@ -1539,6 +1634,12 @@
       -->
 
     </div>
+
+    <!-- Request a document -->
+    <div class="request-doc-banner">
+      <p><strong>Need a specific scheme or lesson plan?</strong>Let us know on WhatsApp.</p>
+      <a href="https://whatsapp.com/channel/0029VbDIYlKJ93wTknUVlJ0A" target="_blank"><i class="ti ti-brand-whatsapp"></i> Request on WhatsApp</a>
+    </div>
   </div>
 </section>
 
@@ -1563,9 +1664,13 @@
 
   function filterCards() {
     const cards = document.querySelectorAll('#resourcesGrid .resource-card');
+    const searchEl = document.getElementById('resourceSearch');
+    const term = searchEl ? searchEl.value.trim().toLowerCase() : '';
     let visible = 0;
     cards.forEach(card => {
-      const match = card.dataset.level === currentLevel && card.dataset.type === currentType;
+      const levelTypeMatch = card.dataset.level === currentLevel && card.dataset.type === currentType;
+      const textMatch = !term || card.innerText.toLowerCase().includes(term);
+      const match = levelTypeMatch && textMatch;
       card.style.display = match ? '' : 'none';
       if (match) visible++;
     });
@@ -1592,9 +1697,13 @@
 
   function filterTeacherCards() {
     const cards = document.querySelectorAll('#teacherGrid .resource-card');
+    const searchEl = document.getElementById('teacherSearch');
+    const term = searchEl ? searchEl.value.trim().toLowerCase() : '';
     let visible = 0;
     cards.forEach(card => {
-      const match = card.dataset.level === currentTLevel && card.dataset.type === currentTType;
+      const levelTypeMatch = card.dataset.level === currentTLevel && card.dataset.type === currentTType;
+      const textMatch = !term || card.innerText.toLowerCase().includes(term);
+      const match = levelTypeMatch && textMatch;
       card.style.display = match ? '' : 'none';
       if (match) visible++;
     });
@@ -1674,17 +1783,51 @@
   </div>
 </section>
 
-<!-- YouTube -->
+<!-- Community: YouTube + WhatsApp -->
 <section class="video-section">
   <div class="container">
-    <div class="section-label">YouTube channel</div>
+    <div class="section-label">Join the community</div>
     <div class="section-title">Watch. Learn. Succeed.</div>
-    <div class="section-sub">Our YouTube channel features video lessons created by our team, covering topics across all CBC levels.</div>
-    <div class="yt-card">
-      <i class="ti ti-brand-youtube yt-icon"></i>
-      <h3>CBC HQ on YouTube</h3>
-      <p>Subscribe to our channel for new video lessons, topic explanations, and exam tips — updated regularly.</p>
-      <a href="https://youtube.com/@cbchq-q2f?si=9rKxe6Xb1U5Kwz94" class="yt-btn" target="_blank"><i class="ti ti-brand-youtube"></i> Subscribe on YouTube</a>
+    <div class="section-sub">Video lessons on YouTube and daily updates on WhatsApp — pick whichever works for you.</div>
+    <div class="community-grid">
+      <div class="yt-card">
+        <i class="ti ti-brand-youtube yt-icon"></i>
+        <h3>CBC HQ on YouTube</h3>
+        <p>Subscribe for new video lessons, topic explanations, and exam tips — updated regularly.</p>
+        <a href="https://youtube.com/@cbchq-q2f?si=9rKxe6Xb1U5Kwz94" class="yt-btn" target="_blank"><i class="ti ti-brand-youtube"></i> Subscribe on YouTube</a>
+      </div>
+      <div class="yt-card">
+        <i class="ti ti-brand-whatsapp wa-icon"></i>
+        <h3>CBC HQ on WhatsApp</h3>
+        <p>Join our WhatsApp channel for new-upload alerts, exam reminders, and quick announcements.</p>
+        <a href="https://whatsapp.com/channel/0029VbDIYlKJ93wTknUVlJ0A" class="wa-btn" target="_blank"><i class="ti ti-brand-whatsapp"></i> Join WhatsApp Channel</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="about-section" id="about">
+  <div class="container">
+    <div class="section-label">About us</div>
+    <div class="section-title">Why CBC HQ exists</div>
+    <div class="section-sub">We're a small team of Kenyan educators building a free, always-growing library of CBC-aligned materials — because every learner deserves access to good study resources, regardless of school fees or location.</div>
+    <div class="about-grid">
+      <div class="about-card">
+        <i class="ti ti-heart-handshake"></i>
+        <h3>Always free</h3>
+        <p>Every note, CAT, and exam paper on this site is free to download — no hidden charges, ever.</p>
+      </div>
+      <div class="about-card">
+        <i class="ti ti-refresh"></i>
+        <h3>Constantly updated</h3>
+        <p>New materials are added regularly as teachers and students share resources with us.</p>
+      </div>
+      <div class="about-card">
+        <i class="ti ti-brand-whatsapp"></i>
+        <h3>Reach us anytime</h3>
+        <p>Questions, corrections, or material requests? Message us on our <a href="https://whatsapp.com/channel/0029VbDIYlKJ93wTknUVlJ0A" target="_blank" style="color: var(--green-light); font-weight:600;">WhatsApp channel</a>.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1718,9 +1861,10 @@
     <div class="footer-links">
       <h4>About</h4>
       <ul>
-        <li><a href="#">Our team</a></li>
-        <li><a href="#">Contact us</a></li>
+        <li><a href="#about">Our team</a></li>
+        <li><a href="https://whatsapp.com/channel/0029VbDIYlKJ93wTknUVlJ0A" target="_blank">Contact us</a></li>
         <li><a href="https://youtube.com/@cbchq-q2f?si=9rKxe6Xb1U5Kwz94" target="_blank">YouTube channel</a></li>
+        <li><a href="https://whatsapp.com/channel/0029VbDIYlKJ93wTknUVlJ0A" target="_blank">WhatsApp channel</a></li>
       </ul>
     </div>
   </div>
@@ -1752,6 +1896,7 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
       Continue with Google
     </button>
+    <p class="auth-privacy-note">We only use your name, email, and profile photo to personalize your account — never shared or sold. You can sign out anytime.</p>
   </div>
 </div>
 
