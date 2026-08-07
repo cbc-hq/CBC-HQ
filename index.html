@@ -506,6 +506,57 @@
     }
     .type-tab:hover, .t-type-tab:hover { color: var(--green-dark); }
 
+    .term-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .t-term-tab {
+      background: white;
+      border: 2px solid var(--light-gray);
+      color: var(--gray);
+      padding: 7px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .t-term-tab.active, .t-term-tab:hover {
+      background: var(--green-accent);
+      border-color: var(--green-accent);
+      color: white;
+    }
+
+    .subject-filter-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .subject-filter-row label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--gray);
+    }
+    .subject-filter-row select {
+      background: white;
+      border: 2px solid var(--light-gray);
+      color: var(--black);
+      padding: 9px 14px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      min-width: 200px;
+    }
+    .subject-filter-row select:focus { outline: none; border-color: var(--green-accent); }
+
     .empty-state {
       flex-direction: column;
       align-items: center;
@@ -548,6 +599,16 @@
     .resource-meta h4 { font-size: 15px; font-weight: 600; color: var(--green-dark); margin-bottom: 4px; line-height: 1.4; }
     .resource-meta p { font-size: 13px; color: var(--gray); }
     .resource-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+
+    .resource-stats {
+      display: flex;
+      gap: 14px;
+      margin-top: 8px;
+      font-size: 12px;
+      color: var(--gray);
+    }
+    .resource-stats span { display: flex; align-items: center; gap: 4px; }
+    .resource-stats i { font-size: 14px; }
     .resource-tag {
       font-size: 11px;
       font-weight: 600;
@@ -1608,6 +1669,14 @@
       <input type="text" id="teacherSearch" placeholder="Search by title or subject…" oninput="filterTeacherCards()">
     </div>
 
+    <!-- Subject Filter -->
+    <div class="subject-filter-row">
+      <label for="teacherSubject"><i class="ti ti-books"></i> Subject:</label>
+      <select id="teacherSubject" onchange="setTSubject(this.value)">
+        <option value="all">All Subjects</option>
+      </select>
+    </div>
+
     <!-- Level Tabs -->
     <div class="level-tabs">
       <button class="t-level-tab active" onclick="setTLevel('primary', this)">📘 Primary (1–6)</button>
@@ -1620,6 +1689,14 @@
       <button class="t-type-tab active" onclick="setTType('schemes', this)"><i class="ti ti-calendar-time"></i> Schemes of Work</button>
       <button class="t-type-tab" onclick="setTType('lessonplans', this)"><i class="ti ti-notebook"></i> Lesson Plans</button>
       <button class="t-type-tab" onclick="setTType('markingschemes', this)"><i class="ti ti-checkbox"></i> Marking Schemes</button>
+      <button class="t-type-tab" onclick="setTType('curriculumdesigns', this)"><i class="ti ti-file-description"></i> Curriculum Designs</button>
+    </div>
+
+    <!-- Term Tabs -->
+    <div class="term-tabs" id="termTabs">
+      <button class="t-term-tab active" onclick="setTTerm('term1', this)">Term 1</button>
+      <button class="t-term-tab" onclick="setTTerm('term2', this)">Term 2</button>
+      <button class="t-term-tab" onclick="setTTerm('term3', this)">Term 3</button>
     </div>
 
     <!-- Empty state -->
@@ -1633,9 +1710,874 @@
 
       <!-- ✏️ ADD TEACHER CARDS BELOW
            data-level: primary | junior | senior
-           data-type:  schemes | lessonplans | markingschemes
+           data-type:  schemes | lessonplans | markingschemes | curriculumdesigns
            (use class="resource-card" exactly as in the main Resources grid)
       -->
+
+      <!-- SAMPLE — replace href with your real file link, then duplicate this block for more -->
+      <div class="resource-card" data-level="junior" data-type="curriculumdesigns" data-term="all" data-subject="Integrated Science">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 7 Curriculum Design — Sample</h4>
+            <p>Curriculum Design</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag junior">Junior Secondary</span>
+        </div>
+        <a href="#" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 History &amp; Citizenship — Week 2, Lesson 1</h4>
+            <p>Lesson Plan</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1ldHz8wd_j0bO3WozAWL_SI91uJ62IyKx" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 History &amp; Citizenship — Week 2, Lesson 2</h4>
+            <p>Lesson Plan</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1AocKVNfvGSx-63xcfrMilSEGNAb5p9s1" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 History &amp; Citizenship — Week 2, Lesson 3</h4>
+            <p>Lesson Plan</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1n1fD97paJsYn3zxzq0KlCL5-jvF3HKu2" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 History &amp; Citizenship — Week 2, Lesson 4</h4>
+            <p>Lesson Plan</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1Eo_pMlQ2HqzYsGqaBd9zJjE6f3cHET4Y" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 History &amp; Citizenship — Week 2, Lesson 5</h4>
+            <p>Lesson Plan</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1vttoLsH5BuGfV1asdkjdPzJhQhdbgXoU" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 History &amp; Citizenship — Week 3, Lesson 1</h4>
+            <p>Lesson Plan</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1nxqZcpFADAm6LSV528W1AfECQaMwx4Xp" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 History &amp; Citizenship — Week 3, Lesson 2</h4>
+            <p>Lesson Plan</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1NjSVMyq0caEG40HZe3mKWJSP68njVGvv" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 History &amp; Citizenship — Week 3, Lesson 3</h4>
+            <p>Lesson Plan</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1YRNwYHQXzAJxFhnruEofA8MAY0s9-Zhk" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 History &amp; Citizenship — Week 3, Lesson 4</h4>
+            <p>Lesson Plan</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1uJKtmH_G1-L8ek8Zhu3jt0quSlntlaMV" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 History &amp; Citizenship — Week 3, Lesson 5</h4>
+            <p>Lesson Plan</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1lzMCGrxuKm3_t2OkjaRw9XNr72UaKd6u" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 History &amp; Citizenship — Week 4, Lesson 1</h4>
+            <p>Lesson Plan</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1-O4nJ8SFpcQfyUSHlqQ_fWzaklxUIwIT" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 History &amp; Citizenship — Week 4, Lesson 2</h4>
+            <p>Lesson Plan</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=17XSz5e46fyafw46PQan0S01Hi2pavBF5" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 History &amp; Citizenship — Week 4, Lesson 3</h4>
+            <p>Lesson Plan</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1iwufsP0QCYyzcjPOQQ_I_uFm1u6YT4Iq" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 History &amp; Citizenship — Week 4, Lesson 4</h4>
+            <p>Lesson Plan</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1bE-7FLesaYqYsjLmaZyMxu3pKQaHDLcu" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 History &amp; Citizenship — Week 4, Lesson 5</h4>
+            <p>Lesson Plan</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1ZVVuLzJDeeO57PxfESOvXnEjAnlW1lxb" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 History &amp; Citizenship — Week 5, Lesson 1</h4>
+            <p>Lesson Plan</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1TuXoEukzh3U8SRuNYylFMRd9j41LKq-s" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 History &amp; Citizenship — Week 5, Lesson 2</h4>
+            <p>Lesson Plan</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1XKX-VZQDJaJUgqDrL6GWh50cUXP6dN2U" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 History &amp; Citizenship — Week 5, Lesson 3</h4>
+            <p>Lesson Plan</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1UOGtNj5ikb3hN_vVWlqMXIDFsrWf8BHM" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 History &amp; Citizenship — Week 5, Lesson 4</h4>
+            <p>Lesson Plan</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1LhEpyDjkFBv8UvJQTtgnD-uZRcbUv6O7" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 History &amp; Citizenship — Week 5, Lesson 5</h4>
+            <p>Lesson Plan</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1H9aRw2MBibNVgSHyqxRBL7fHZwjlV2RZ" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 History &amp; Citizenship — Week 6, Lesson 1</h4>
+            <p>Lesson Plan</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1CwNkwuZGicxOKtBDDf_4Hirs3AsScZgI" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 History &amp; Citizenship — Week 6, Lesson 2</h4>
+            <p>Lesson Plan</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1sA0SW5cuwvbS_yRuGcntZan2tTXZC-hl" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 History &amp; Citizenship — Week 6, Lesson 3</h4>
+            <p>Lesson Plan</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=14gyKSE7ZryjXQAHtN_xc5dWFnaEne0V0" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 History &amp; Citizenship — Week 6, Lesson 4</h4>
+            <p>Lesson Plan</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=14kHEDLk00wjIDk9JhKxC-BjMFcEsUOxx" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 History &amp; Citizenship — Week 6, Lesson 5</h4>
+            <p>Lesson Plan</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1O-02zJWrvvMywUUgFlSHOPhK63oEN0ay" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 History &amp; Citizenship — Week 7, Lesson 1</h4>
+            <p>Lesson Plan</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1m9YFW1Osl6FJOVX4w1jekf8e9DA7nfBs" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 History &amp; Citizenship — Week 7, Lesson 2</h4>
+            <p>Lesson Plan</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1eCl9TPpjhPeT0nZw1ptLcyE4Uvt8a8Og" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 History &amp; Citizenship — Week 7, Lesson 3</h4>
+            <p>Lesson Plan</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1H31oRUm65ZSxmetSutHxAYtHQ8N-0Bg8" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 History &amp; Citizenship — Week 7, Lesson 4</h4>
+            <p>Lesson Plan</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1bdd7StSquclp7ls3nZPdJLpLi6CzLu35" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 History &amp; Citizenship — Week 7, Lesson 5</h4>
+            <p>Lesson Plan</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1AWLljk1ihCq9PM3V9gN1IHutXjAqqBMt" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="schemes" data-term="term3" data-subject="Geography">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 Geography — Scheme of Work (Term 3)</h4>
+            <p>Scheme of Work</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+        </div>
+        <a href="https://docs.google.com/document/d/1VnHCVBs4vR23CxfyDfmV392Pe9G1UD5H/export?format=pdf" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="schemes" data-term="term3" data-subject="History and Citizenship">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 History &amp; Citizenship — Scheme of Work (Term 3)</h4>
+            <p>Scheme of Work</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+        </div>
+        <a href="https://docs.google.com/document/d/118Fh7mvJOwqbnnRpB4qG5Ung3I0rAR9x/export?format=pdf" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="junior" data-type="curriculumdesigns" data-term="all" data-subject="Mathematics">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 7 Mathematics — Curriculum Design</h4>
+            <p>Curriculum Design</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag junior">Junior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1VEmzDyJqK6zps2S_MpheW4fbZboftn1d" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="junior" data-type="curriculumdesigns" data-term="all" data-subject="English">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 7 English — Curriculum Design</h4>
+            <p>Curriculum Design</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag junior">Junior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1J6K42FDSqzjWFYbpzGQ-cXpLXUwtz2--" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="junior" data-type="curriculumdesigns" data-term="all" data-subject="Kiswahili">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 7 Kiswahili — Curriculum Design</h4>
+            <p>Curriculum Design</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag junior">Junior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=18b4mF1eqpPyb0TijVI3pscH7sEW1ztVh" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="junior" data-type="curriculumdesigns" data-term="all" data-subject="Christian Religious Education">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 7 Christian Religious Education — Curriculum Design</h4>
+            <p>Curriculum Design</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag junior">Junior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1Yq4qNSVAmaO_baj8IU_6kv1Mdi_kJkeI" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="junior" data-type="curriculumdesigns" data-term="all" data-subject="Islamic Religious Education">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 7 Islamic Religious Education — Curriculum Design</h4>
+            <p>Curriculum Design</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag junior">Junior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1OAIXpdZLspmzZcjjYXxJLeEmekO7mPkA" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="junior" data-type="curriculumdesigns" data-term="all" data-subject="Hindu Religious Education">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 7 Hindu Religious Education — Curriculum Design</h4>
+            <p>Curriculum Design</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag junior">Junior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1oG92zrUKax9NvtPc2vNFDuSdYjYnyuVS" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="junior" data-type="curriculumdesigns" data-term="all" data-subject="French">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 7 French — Curriculum Design</h4>
+            <p>Curriculum Design</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag junior">Junior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1U7ixCynGEgyasHkGTZpHYQRzh49lUW3G" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="junior" data-type="curriculumdesigns" data-term="all" data-subject="Creative Arts">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 7 Creative Arts — Curriculum Design</h4>
+            <p>Curriculum Design</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag junior">Junior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1iOgSA3Nj_xnmTV6yVhPMr83ajOzlpMI5" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="junior" data-type="curriculumdesigns" data-term="all" data-subject="Pre-Technical Studies">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 7 Pre-Technical Studies — Curriculum Design</h4>
+            <p>Curriculum Design</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag junior">Junior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1J-97v0T3l_956Wy8tauJ3YHsseNNFwMF" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="junior" data-type="curriculumdesigns" data-term="all" data-subject="Integrated Science">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 7 Integrated Science — Curriculum Design</h4>
+            <p>Curriculum Design</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag junior">Junior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=19OKMsUcOQnVfSvAwTPt3B1RirAu5Tw0x" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="junior" data-type="curriculumdesigns" data-term="all" data-subject="Agriculture">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 7 Agriculture — Curriculum Design</h4>
+            <p>Curriculum Design</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag junior">Junior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1yU-KdzGk-PBmCnzePh5HURIHCqjeTISz" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="junior" data-type="curriculumdesigns" data-term="all" data-subject="Social Studies">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 7 Social Studies — Curriculum Design</h4>
+            <p>Curriculum Design</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag junior">Junior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1olGENK2KrwgHQfNNX2lz6t9j3wXBUULp" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="junior" data-type="curriculumdesigns" data-term="all" data-subject="Mandarin">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 7 Mandarin — Curriculum Design</h4>
+            <p>Curriculum Design</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag junior">Junior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1BQBPi4WX1VS1efUMkK9K-2OMbZqrH7ma" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="junior" data-type="curriculumdesigns" data-term="all" data-subject="German">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 7 German — Curriculum Design</h4>
+            <p>Curriculum Design</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag junior">Junior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1D9pSPMBLB5PMlNu_l_Uuf6jbMux2F1DM" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="curriculumdesigns" data-term="all" data-subject="English Literature">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 English Literature — Curriculum Design</h4>
+            <p>Curriculum Design</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1VW4Xu-QV9aPsk8TeBYqIX6QuMiLJm5cd" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="curriculumdesigns" data-term="all" data-subject="Biology">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 Biology — Curriculum Design</h4>
+            <p>Curriculum Design</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1o_K0yOebd8IqecfVWwBzrXsZOpItuedv" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="curriculumdesigns" data-term="all" data-subject="Geography">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 Geography — Curriculum Design</h4>
+            <p>Curriculum Design</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1rVuLKCSatmi3WbCZ7oypeJnU9qB13n-D" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="curriculumdesigns" data-term="all" data-subject="Chemistry">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 Chemistry — Curriculum Design</h4>
+            <p>Curriculum Design</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1zn2wcT9Z-H6NMMRxyBqpsJuikELxPGxH" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="curriculumdesigns" data-term="all" data-subject="History and Citizenship">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 History and Citizenship — Curriculum Design</h4>
+            <p>Curriculum Design</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1rlnJYcc82o_11FBAD1FeMdRjHUY7dpNX" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="curriculumdesigns" data-term="all" data-subject="English">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 English — Curriculum Design</h4>
+            <p>Curriculum Design</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1a-O5DPcyRrNxOGSm7YhTNYJpUyfNohly" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="curriculumdesigns" data-term="all" data-subject="Mathematics">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 Mathematics — Curriculum Design</h4>
+            <p>Curriculum Design</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=13xM9JfHkn4z1KEemTXxwJQo80248OZc5" target="_blank" class="resource-download">
+          <i class="ti ti-download"></i> Download PDF
+        </a>
+      </div>
 
     </div>
 
@@ -1684,6 +2626,8 @@
   // ── Teachers' Corner filtering (kept separate from the main Resources grid) ──
   let currentTLevel = 'primary';
   let currentTType = 'schemes';
+  let currentTTerm = 'term1';
+  let currentTSubject = 'all';
 
   function setTLevel(level, btn) {
     currentTLevel = level;
@@ -1699,15 +2643,44 @@
     filterTeacherCards();
   }
 
+  function setTTerm(term, btn) {
+    currentTTerm = term;
+    document.querySelectorAll('.t-term-tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    filterTeacherCards();
+  }
+
+  function setTSubject(subject) {
+    currentTSubject = subject;
+    filterTeacherCards();
+  }
+
+  // Builds the Subject dropdown from whatever data-subject values exist on cards
+  function refreshSubjectDropdown() {
+    const select = document.getElementById('teacherSubject');
+    if (!select) return;
+    const subjects = new Set();
+    document.querySelectorAll('#teacherGrid .resource-card').forEach(card => {
+      if (card.dataset.subject) subjects.add(card.dataset.subject);
+    });
+    const sorted = Array.from(subjects).sort((a, b) => a.localeCompare(b));
+    select.innerHTML = '<option value="all">All Subjects</option>' +
+      sorted.map(s => `<option value="${s}">${s}</option>`).join('');
+  }
+
   function filterTeacherCards() {
     const cards = document.querySelectorAll('#teacherGrid .resource-card');
     const searchEl = document.getElementById('teacherSearch');
-    const term = searchEl ? searchEl.value.trim().toLowerCase() : '';
+    const searchTerm = searchEl ? searchEl.value.trim().toLowerCase() : '';
     let visible = 0;
     cards.forEach(card => {
+      const cardTerm = card.dataset.term || 'all';
+      const cardSubject = card.dataset.subject || 'all';
       const levelTypeMatch = card.dataset.level === currentTLevel && card.dataset.type === currentTType;
-      const textMatch = !term || card.innerText.toLowerCase().includes(term);
-      const match = levelTypeMatch && textMatch;
+      const termMatch = cardTerm === 'all' || cardTerm === currentTTerm;
+      const subjectMatch = currentTSubject === 'all' || cardSubject === currentTSubject;
+      const textMatch = !searchTerm || card.innerText.toLowerCase().includes(searchTerm);
+      const match = levelTypeMatch && termMatch && subjectMatch && textMatch;
       card.style.display = match ? '' : 'none';
       if (match) visible++;
     });
@@ -1717,11 +2690,14 @@
   // Intercept download clicks
   document.addEventListener('DOMContentLoaded', function () {
     filterCards();
+    refreshSubjectDropdown();
     filterTeacherCards();
+    initResourceCounters();
     document.querySelectorAll('.resource-download').forEach(function (link) {
       link.addEventListener('click', function (e) {
         e.preventDefault();
         pendingDownloadUrl = this.getAttribute('href');
+        pendingDownloadId = this.closest('.resource-card') ? this.closest('.resource-card').dataset.counterId : null;
         const user = window._currentUser ? window._currentUser() : null;
         if (!user) {
           window._pendingDownloadAfterAuth = true;
@@ -1732,6 +2708,79 @@
       });
     });
   });
+
+  // ── View / download counters (CounterAPI v1, no auth needed) ──
+  const COUNTER_NS = 'cbchq-b7f3-site';
+  const COUNTER_BASE = 'https://api.counterapi.dev/v1';
+  let pendingDownloadId = null;
+
+  function slugifyCounter(text) {
+    return text.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '').slice(0, 70);
+  }
+
+  function initResourceCounters() {
+    const cards = document.querySelectorAll('.resource-card');
+    cards.forEach(function (card) {
+      const titleEl = card.querySelector('h4');
+      if (!titleEl) return;
+      const id = slugifyCounter(titleEl.textContent);
+      card.dataset.counterId = id;
+
+      const stats = document.createElement('div');
+      stats.className = 'resource-stats';
+      stats.innerHTML =
+        '<span class="stat-views"><i class="ti ti-eye"></i><span class="stat-views-count">–</span></span>' +
+        '<span class="stat-downloads"><i class="ti ti-download"></i><span class="stat-downloads-count">–</span></span>';
+      const tagsEl = card.querySelector('.resource-tags');
+      if (tagsEl) tagsEl.insertAdjacentElement('afterend', stats);
+
+      // Show current download count without incrementing it
+      fetch(COUNTER_BASE + '/' + COUNTER_NS + '/dl-' + id)
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          const el = stats.querySelector('.stat-downloads-count');
+          if (el) el.textContent = (d && typeof d.count === 'number') ? d.count : 0;
+        })
+        .catch(function () {
+          const el = stats.querySelector('.stat-downloads-count');
+          if (el) el.textContent = '0';
+        });
+    });
+
+    // Only counts a view once a card is actually scrolled into view (and only once per card per visit)
+    const seenViews = new Set();
+    const viewObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        const card = entry.target;
+        const id = card.dataset.counterId;
+        if (!id || seenViews.has(id)) return;
+        seenViews.add(id);
+        fetch(COUNTER_BASE + '/' + COUNTER_NS + '/view-' + id + '/up')
+          .then(function (r) { return r.json(); })
+          .then(function (d) {
+            const el = card.querySelector('.stat-views-count');
+            if (el) el.textContent = (d && typeof d.count === 'number') ? d.count : '';
+          })
+          .catch(function () {});
+        viewObserver.unobserve(card);
+      });
+    }, { threshold: 0.4 });
+
+    cards.forEach(function (card) { viewObserver.observe(card); });
+  }
+
+  function trackDownload(id) {
+    if (!id) return;
+    fetch(COUNTER_BASE + '/' + COUNTER_NS + '/dl-' + id + '/up')
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        document.querySelectorAll('.resource-card[data-counter-id="' + id + '"] .stat-downloads-count').forEach(function (el) {
+          el.textContent = (d && typeof d.count === 'number') ? d.count : '';
+        });
+      })
+      .catch(function () {});
+  }
 
   function openAuthModal() {
     document.getElementById('authModal').classList.add('open');
@@ -1747,6 +2796,8 @@
     setTimeout(function () {
       if (pendingDownloadUrl) {
         window.open(pendingDownloadUrl, '_blank');
+        trackDownload(pendingDownloadId);
+        pendingDownloadId = null;
       }
       closeModal();
     }, 1500);
