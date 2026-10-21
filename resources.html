@@ -1,0 +1,2163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free CBC Notes, CATs & Past Papers for Kenyan Students | CBC HQ</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Download free CBC-aligned notes, CATs and past exam papers for Primary, Junior Secondary and Senior Secondary students in Kenya — organised by grade and subject.">
+  <meta name="keywords" content="free CBC notes Kenya, free education resources Kenya, Grade 7 notes, Grade 8 notes, Grade 9 notes, Grade 10 notes, Junior Secondary notes Kenya, Senior Secondary notes Kenya, CBC past papers, CBC CAT, free notes Kenya">
+  <meta name="author" content="CBC HQ">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://cbc-hq.github.io/CBC-HQ/resources.html">
+
+  <!-- Open Graph (WhatsApp, Facebook previews) -->
+  <meta property="og:title" content="Free CBC Notes, CATs & Past Papers for Kenyan Students">
+  <meta property="og:description" content="Free, CBC-aligned notes, CATs and past papers for Primary, Junior Secondary and Senior Secondary learners in Kenya.">
+  <meta property="og:url" content="https://cbc-hq.github.io/CBC-HQ/resources.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_KE">
+  <meta property="og:image" content="https://cbc-hq.github.io/CBC-HQ/cbc-hq-logo.png">
+  <meta property="og:image:width" content="1254">
+  <meta property="og:image:height" content="1254">
+
+  <!-- Twitter/X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free CBC Notes, CATs & Past Papers for Kenyan Students">
+  <meta name="twitter:description" content="Free, CBC-aligned notes, CATs and past papers for Primary, Junior Secondary and Senior Secondary learners in Kenya.">
+  <meta name="twitter:image" content="https://cbc-hq.github.io/CBC-HQ/cbc-hq-logo.png">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.x/dist/tabler-icons.min.css" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, sans-serif; background: #fff; color: #111; }
+
+    :root {
+      --green-dark: #0a3d1f;
+      --green-mid: #145a32;
+      --green-light: #1e8449;
+      --green-accent: #27ae60;
+      --white: #ffffff;
+      --off-white: #f4f6f4;
+      --black: #111111;
+      --gray: #444444;
+      --light-gray: #e8ece8;
+    }
+
+    nav {
+      background: var(--green-dark);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .logo-icon {
+      background: var(--green-accent);
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; font-weight: 600; color: white;
+    }
+    .logo-text { font-size: 20px; font-weight: 600; color: white; letter-spacing: 0.5px; }
+    .logo-text span { color: #7defa7; }
+    nav ul { display: flex; gap: 4px; list-style: none; }
+    nav ul a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 14px;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+    nav ul a:hover { background: rgba(255,255,255,0.1); color: white; }
+    .nav-cta {
+      background: var(--green-accent);
+      color: white !important;
+      padding: 8px 18px;
+      border-radius: 7px;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: #219a52 !important; }
+    .hamburger { display: none; background: none; border: none; color: white; font-size: 24px; cursor: pointer; }
+
+    /* Auth button in nav */
+    .nav-auth-btn {
+      display: flex; align-items: center; gap: 8px;
+      background: white; color: var(--green-dark) !important;
+      padding: 7px 14px; border-radius: 7px;
+      font-size: 13px; font-weight: 600;
+      cursor: pointer; border: none; transition: background 0.2s;
+    }
+    .nav-auth-btn:hover { background: #f0f0f0; }
+    .nav-user-menu { display: flex; align-items: center; gap: 10px; }
+    .nav-user-avatar { width: 34px; height: 34px; border-radius: 50%; border: 2px solid var(--green-accent); cursor: pointer; }
+    .nav-user-name { font-size: 13px; color: rgba(255,255,255,0.85); font-weight: 500; }
+    .nav-signout-btn {
+      background: rgba(255,255,255,0.12); color: white; border: none;
+      padding: 6px 12px; border-radius: 6px; font-size: 12px;
+      cursor: pointer; transition: background 0.2s;
+    }
+    .nav-signout-btn:hover { background: rgba(255,255,255,0.22); }
+
+    /* Auth gate modal */
+    .auth-modal-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.6); z-index: 1000;
+      align-items: center; justify-content: center; padding: 1rem;
+    }
+    .auth-modal-overlay.open { display: flex; }
+    .auth-modal {
+      background: white; border-radius: 20px; padding: 40px 32px;
+      max-width: 400px; width: 100%; text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+      animation: modalIn 0.25s ease;
+    }
+    .auth-modal-logo { font-size: 42px; margin-bottom: 12px; }
+    .auth-modal h2 { font-size: 22px; font-weight: 700; color: var(--green-dark); margin-bottom: 10px; }
+    .auth-modal p { font-size: 14px; color: var(--gray); line-height: 1.7; margin-bottom: 28px; }
+    .google-signin-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      background: white; color: #444; border: 1.5px solid #ddd; border-radius: 10px;
+      padding: 13px 24px; font-size: 15px; font-weight: 600;
+      cursor: pointer; width: 100%; transition: background 0.2s, box-shadow 0.2s;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+    .google-signin-btn:hover { background: #f8f8f8; box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+    .google-signin-btn svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+    .hero {
+      background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 55%, var(--green-light) 100%);
+      color: white;
+      padding: 80px 2rem 70px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(39,174,96,0.2);
+      border: 1px solid rgba(39,174,96,0.4);
+      color: #7defa7;
+      font-size: 12px;
+      padding: 5px 16px;
+      border-radius: 20px;
+      margin-bottom: 22px;
+      letter-spacing: 0.5px;
+    }
+    .hero h1 {
+      font-size: 46px;
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+    .hero h1 span { color: #7defa7; }
+    .hero p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.75);
+      max-width: 560px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+    .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--green-accent);
+      color: white;
+      border: none;
+      padding: 13px 28px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: #219a52; }
+    .btn-outline {
+      background: transparent;
+      color: white;
+      border: 1.5px solid rgba(255,255,255,0.4);
+      padding: 13px 28px;
+      border-radius: 8px;
+      font-size: 15px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px;
+      transition: all 0.2s;
+    }
+    .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.08); }
+
+    .stats-bar {
+      background: var(--green-dark);
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 24px 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 56px;
+      flex-wrap: wrap;
+    }
+    .stat { text-align: center; }
+    .stat-num { font-size: 28px; font-weight: 700; color: #7defa7; }
+    .stat-label { font-size: 12px; color: rgba(255,255,255,0.55); margin-top: 3px; }
+
+    section { padding: 64px 2rem; }
+    .container { max-width: 960px; margin: 0 auto; }
+    .section-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--green-light);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 12px;
+    }
+    .section-sub {
+      font-size: 16px;
+      color: var(--gray);
+      max-width: 520px;
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    .feature-card {
+      background: var(--white);
+      border: 1px solid var(--light-gray);
+      border-radius: 14px;
+      padding: 24px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .feature-card:hover { border-color: var(--green-accent); transform: translateY(-2px); }
+    .feature-icon {
+      width: 46px; height: 46px;
+      background: #e8f5e9;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px;
+      color: var(--green-light);
+      font-size: 22px;
+    }
+    .feature-card h3 { font-size: 16px; font-weight: 600; color: var(--green-dark); margin-bottom: 8px; }
+    .feature-card p { font-size: 14px; color: var(--gray); line-height: 1.6; }
+
+    .for-who { background: var(--off-white); }
+    .who-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .who-card {
+      background: white;
+      border-radius: 16px;
+      padding: 32px;
+      border: 1px solid var(--light-gray);
+    }
+    .who-card.teachers { border-top: 3px solid var(--green-dark); }
+    .who-card.students { border-top: 3px solid var(--green-accent); }
+    .who-tag {
+      display: inline-block;
+      font-size: 12px; font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+    .teachers .who-tag { background: #e8f5e9; color: var(--green-dark); }
+    .students .who-tag { background: #d4efdf; color: var(--green-mid); }
+    .who-card h3 { font-size: 20px; font-weight: 700; color: var(--green-dark); margin-bottom: 16px; }
+    .who-list { list-style: none; }
+    .who-list li {
+      font-size: 14px; color: var(--gray);
+      padding: 9px 0;
+      border-bottom: 1px solid var(--light-gray);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .who-list li:last-child { border-bottom: none; }
+    .who-list li i { color: var(--green-accent); font-size: 17px; }
+
+    .levels { background: white; }
+    .levels-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+    .level-card {
+      border-radius: 14px;
+      padding: 28px;
+      text-align: center;
+      border: 2px solid transparent;
+      transition: transform 0.2s;
+    }
+    .level-card:hover { transform: translateY(-2px); }
+    .level-card.primary { background: #e8f5e9; border-color: #c8e6c9; }
+    .level-card.junior { background: #d4efdf; border-color: #a5d6a7; }
+    .level-card.senior { background: #a9dfbf; border-color: #81c784; }
+    .level-num { font-size: 36px; font-weight: 700; color: var(--green-dark); }
+    .level-name { font-size: 15px; font-weight: 600; color: var(--green-dark); margin: 8px 0 4px; }
+    .level-desc { font-size: 13px; color: var(--green-mid); }
+    .level-badge {
+      display: inline-block;
+      margin-top: 14px;
+      font-size: 12px;
+      background: rgba(255,255,255,0.6);
+      color: var(--green-dark);
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+
+    .video-section { background: var(--green-dark); color: white; text-align: center; }
+    .video-section .section-label { color: #7defa7; }
+    .video-section .section-title { color: white; }
+    .video-section .section-sub { color: rgba(255,255,255,0.65); margin: 0 auto 36px; }
+    .yt-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      padding: 40px 32px;
+      max-width: 460px;
+      margin: 0 auto;
+      display: flex; flex-direction: column; align-items: center; gap: 16px;
+    }
+    .yt-icon { font-size: 52px; color: #ff4444; }
+    .yt-card h3 { font-size: 20px; font-weight: 700; }
+    .yt-card p { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.7; text-align: center; }
+    .yt-btn {
+      background: #ff4444;
+      color: white;
+      border: none;
+      padding: 13px 26px;
+      border-radius: 8px;
+      font-size: 15px; font-weight: 500;
+      cursor: pointer;
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 6px;
+      transition: background 0.2s;
+      text-decoration: none;
+    }
+    .yt-btn:hover { background: #cc0000; }
+
+    /* Community cards row (YouTube + WhatsApp) */
+    .community-grid {
+      display: flex; gap: 24px; justify-content: center; flex-wrap: wrap;
+    }
+    .community-grid .yt-card { margin: 0; flex: 1 1 340px; max-width: 400px; }
+    .wa-icon { font-size: 52px; color: #25D366; }
+    .wa-btn {
+      background: #25D366; color: white; border: none;
+      padding: 13px 26px; border-radius: 8px;
+      font-size: 15px; font-weight: 500; cursor: pointer;
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 6px; transition: background 0.2s; text-decoration: none;
+    }
+    .wa-btn:hover { background: #1da851; }
+
+    /* "New" badge on recently added cards */
+    .resource-tag.new-badge {
+      background: var(--green-accent); color: white; font-weight: 700;
+    }
+
+    /* Search bar */
+    .search-bar {
+      position: relative; max-width: 420px; margin: 0 auto 28px;
+    }
+    .search-bar input {
+      width: 100%; padding: 12px 16px 12px 42px;
+      border: 1.5px solid var(--light-gray); border-radius: 10px;
+      font-size: 14px; outline: none; transition: border-color 0.2s;
+    }
+    .search-bar input:focus { border-color: var(--green-accent); }
+    .search-bar i {
+      position: absolute; left: 15px; top: 50%; transform: translateY(-50%);
+      color: var(--gray); font-size: 17px;
+    }
+
+    /* Request a document banner */
+    .request-doc-banner {
+      margin: 40px auto 0; max-width: 640px;
+      background: var(--off-white); border: 1px dashed var(--green-accent);
+      border-radius: 14px; padding: 22px 26px;
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .request-doc-banner p { font-size: 14px; color: var(--gray); }
+    .request-doc-banner p strong { color: var(--green-dark); display: block; font-size: 15px; margin-bottom: 2px; }
+    .request-doc-banner a {
+      background: #25D366; color: white; text-decoration: none;
+      padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 600;
+      display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
+    }
+
+    /* Privacy note under Google sign-in */
+    .auth-privacy-note {
+      font-size: 11.5px; color: #999; margin-top: 16px; line-height: 1.6;
+    }
+
+    /* About section */
+    .about-section { background: var(--off-white); }
+    .about-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px; max-width: 800px; margin: 0 auto;
+    }
+    .about-card {
+      background: white; border: 1px solid var(--light-gray); border-radius: 14px;
+      padding: 26px; text-align: center;
+    }
+    .about-card i { font-size: 30px; color: var(--green-light); margin-bottom: 12px; }
+    .about-card h3 { font-size: 15px; font-weight: 700; color: var(--green-dark); margin-bottom: 8px; }
+    .about-card p { font-size: 13.5px; color: var(--gray); line-height: 1.7; }
+
+    footer {
+      background: #050f09;
+      color: rgba(255,255,255,0.55);
+      padding: 48px 2rem 28px;
+    }
+    .footer-top {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 32px;
+      margin-bottom: 36px;
+    }
+    .footer-brand p { font-size: 13px; margin-top: 10px; max-width: 240px; line-height: 1.7; }
+    .footer-links h4 { color: white; font-size: 13px; font-weight: 600; margin-bottom: 12px; }
+    .footer-links ul { list-style: none; }
+    .footer-links ul li { margin-bottom: 8px; }
+    .footer-links ul li a { color: rgba(255,255,255,0.5); font-size: 13px; text-decoration: none; transition: color 0.2s; }
+    .footer-links ul li a:hover { color: white; }
+    .footer-bottom {
+      max-width: 960px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 20px;
+      font-size: 13px;
+      text-align: center;
+    }
+    .footer-bottom span { color: #7defa7; }
+
+    /* Resources Section */
+    .resources { background: var(--off-white); }
+
+    .level-tabs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    .level-tab, .t-level-tab {
+      background: white;
+      border: 2px solid var(--light-gray);
+      color: var(--gray);
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .level-tab.active, .level-tab:hover,
+    .t-level-tab.active, .t-level-tab:hover {
+      background: var(--green-dark);
+      border-color: var(--green-dark);
+      color: white;
+    }
+
+    .type-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 28px;
+      border-bottom: 2px solid var(--light-gray);
+      padding-bottom: 0;
+    }
+    .type-tab, .t-type-tab {
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      color: var(--gray);
+      padding: 10px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+      border-radius: 6px 6px 0 0;
+    }
+    .type-tab.active, .t-type-tab.active {
+      color: var(--green-dark);
+      border-bottom-color: var(--green-accent);
+      background: white;
+    }
+    .type-tab:hover, .t-type-tab:hover { color: var(--green-dark); }
+
+    .term-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .t-term-tab {
+      background: white;
+      border: 2px solid var(--light-gray);
+      color: var(--gray);
+      padding: 7px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .t-term-tab.active, .t-term-tab:hover {
+      background: var(--green-accent);
+      border-color: var(--green-accent);
+      color: white;
+    }
+
+    .subject-filter-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .subject-filter-row label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--gray);
+    }
+    .subject-filter-row select {
+      background: white;
+      border: 2px solid var(--light-gray);
+      color: var(--black);
+      padding: 9px 14px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      min-width: 200px;
+    }
+    .subject-filter-row select:focus { outline: none; border-color: var(--green-accent); }
+
+    .empty-state {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+      color: var(--gray);
+      text-align: center;
+      gap: 12px;
+    }
+    .empty-state i { font-size: 48px; opacity: 0.3; }
+    .empty-state p { font-size: 15px; }
+
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .resource-card {
+      background: white;
+      border: 1px solid var(--light-gray);
+      border-radius: 14px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .resource-card:hover { border-color: var(--green-accent); transform: translateY(-2px); }
+    .resource-card-top { display: flex; align-items: flex-start; gap: 14px; }
+    .resource-file-icon {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .resource-file-icon.pdf { background: #fdecea; color: #c0392b; }
+    .resource-file-icon.doc { background: #e8f0fe; color: #2563eb; }
+    .resource-meta { flex: 1; }
+    .resource-meta h4 { font-size: 15px; font-weight: 600; color: var(--green-dark); margin-bottom: 4px; line-height: 1.4; }
+    .resource-meta p { font-size: 13px; color: var(--gray); }
+    .resource-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+
+    .resource-stats {
+      display: flex;
+      gap: 14px;
+      margin-top: 8px;
+      font-size: 12px;
+      color: var(--gray);
+    }
+    .resource-stats span { display: flex; align-items: center; gap: 4px; }
+    .resource-stats i { font-size: 14px; }
+    .resource-tag {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: #e8f5e9;
+      color: var(--green-mid);
+    }
+    .resource-tag.junior { background: #e3f2fd; color: #1565c0; }
+    .resource-tag.senior { background: #f3e5f5; color: #6a1b9a; }
+    .resource-tag.primary { background: #e8f5e9; color: var(--green-mid); }
+    .resource-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: auto;
+    }
+    .resource-download {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--green-light);
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-top: auto;
+      transition: color 0.2s;
+    }
+    .resource-download:hover { color: var(--green-dark); }
+    .resource-actions .resource-download { margin-top: 0; }
+    .resource-preview {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--gray);
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .resource-preview:hover { color: var(--green-dark); }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: var(--green-dark);
+      padding: 12px 2rem 20px;
+      gap: 4px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 15px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      transition: color 0.2s;
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover { color: white; }
+    .mobile-menu .mob-cta {
+      margin-top: 8px;
+      background: var(--green-accent);
+      color: white !important;
+      padding: 11px 18px;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: 500;
+      border-bottom: none !important;
+    }
+
+    @media (max-width: 640px) {
+      nav ul, .nav-cta { display: none; }
+      .hamburger { display: block; }
+      .hero h1 { font-size: 30px; }
+      .hero p { font-size: 16px; }
+      .stats-bar { gap: 24px; }
+      .section-title { font-size: 24px; }
+    }
+
+    /* ── Subscribe Modal ── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal {
+      background: white;
+      border-radius: 20px;
+      padding: 36px 32px;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+      position: relative;
+      animation: modalIn 0.25s ease;
+    }
+    @keyframes modalIn {
+      from { opacity: 0; transform: scale(0.93) translateY(12px); }
+      to   { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .modal-close {
+      position: absolute;
+      top: 14px; right: 16px;
+      background: none; border: none;
+      font-size: 22px; cursor: pointer;
+      color: var(--gray);
+      line-height: 1;
+    }
+    .modal-close:hover { color: var(--black); }
+    .modal-yt-icon { font-size: 52px; color: #ff4444; margin-bottom: 12px; }
+    .modal h2 { font-size: 20px; font-weight: 700; color: var(--green-dark); margin-bottom: 10px; }
+    .modal p { font-size: 14px; color: var(--gray); line-height: 1.7; margin-bottom: 24px; }
+    .modal-actions { display: flex; flex-direction: column; gap: 10px; }
+    .modal-subscribe-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      background: #ff4444; color: white;
+      border: none; border-radius: 10px;
+      padding: 13px 20px; font-size: 15px; font-weight: 600;
+      cursor: pointer; text-decoration: none;
+      transition: background 0.2s;
+    }
+    .modal-subscribe-btn:hover { background: #cc0000; }
+    .modal-confirm-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      background: var(--green-accent); color: white;
+      border: none; border-radius: 10px;
+      padding: 13px 20px; font-size: 15px; font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .modal-confirm-btn:hover { background: #219a52; }
+    .modal-divider { font-size: 12px; color: #aaa; }
+
+    /* ── How to Download Section ── */
+    .how-to { background: white; }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      counter-reset: steps;
+    }
+    .step-card {
+      background: var(--off-white);
+      border-radius: 16px;
+      padding: 28px 22px;
+      position: relative;
+      border: 1px solid var(--light-gray);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .step-card:hover { border-color: var(--green-accent); transform: translateY(-2px); }
+    .step-number {
+      width: 36px; height: 36px;
+      background: var(--green-accent);
+      color: white;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .step-card h3 { font-size: 15px; font-weight: 700; color: var(--green-dark); margin-bottom: 8px; }
+    .step-card p { font-size: 13px; color: var(--gray); line-height: 1.6; }
+    .step-icon { font-size: 22px; color: var(--green-light); margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">
+    <div class="logo-icon">H</div>
+    <div class="logo-text">CBC <span>HQ</span></div>
+  </a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="resources.html">Resources</a></li>
+    <li><a href="https://youtube.com/@cbchq-q2f?si=9rKxe6Xb1U5Kwz94" target="_blank">Videos</a></li>
+    <li><a href="index.html#levels">Levels</a></li>
+    <li><a href="teachers.html">Teachers' Corner</a></li>
+    <li><a href="index.html#about">About</a></li>
+  </ul>
+  <div id="navAuthArea">
+    <button class="nav-auth-btn" onclick="openAuthModal()">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="18" height="18"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
+      Sign in
+    </button>
+  </div>
+  <button class="hamburger" aria-label="Open menu"><i class="ti ti-menu-2"></i></button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="resources.html">Resources</a>
+  <a href="https://youtube.com/@cbchq-q2f?si=9rKxe6Xb1U5Kwz94" target="_blank">Videos</a>
+  <a href="index.html#levels">Levels</a>
+  <a href="teachers.html">Teachers' Corner</a>
+  <a href="index.html#about">About</a>
+  <a href="resources.html" class="mob-cta">Get started</a>
+</div>
+
+<script>
+  document.querySelector('.hamburger').addEventListener('click', function() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('open');
+    this.querySelector('i').className = menu.classList.contains('open')
+      ? 'ti ti-x'
+      : 'ti ti-menu-2';
+  });
+  document.querySelectorAll('.mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.remove('open');
+      document.querySelector('.hamburger i').className = 'ti ti-menu-2';
+    });
+  });
+</script>
+
+<div class="hero" style="padding-bottom:10px;">
+  <div class="hero-badge">Free for every Kenyan student</div>
+  <h1>Free CBC Notes, CATs &amp; Past Papers</h1>
+  <p>Download free, CBC-aligned notes, continuous assessment tests and past exam papers for Primary, Junior Secondary and Senior Secondary learners across Kenya — organised by grade, subject and type.</p>
+</div>
+
+<!-- Resources -->
+<section class="resources" id="resources">
+  <div class="container">
+    <div class="section-label">Downloads</div>
+    <div class="section-title">Study materials</div>
+    <div class="section-sub">Select your level, then choose what you need. All materials are free and CBC-aligned.</div>
+
+    <!-- Search -->
+    <div class="search-bar">
+      <i class="ti ti-search"></i>
+      <input type="text" id="resourceSearch" placeholder="Search by title or subject…" oninput="filterCards()">
+    </div>
+
+    <!-- Level Tabs -->
+    <div class="level-tabs">
+      <button class="level-tab active" onclick="setLevel('primary', this)">📘 Primary (1–6)</button>
+      <button class="level-tab" onclick="setLevel('junior', this)">📗 Junior Secondary (7–9)</button>
+      <button class="level-tab" onclick="setLevel('senior', this)">📕 Senior Secondary (10–12)</button>
+    </div>
+
+    <!-- Type Tabs -->
+    <div class="type-tabs">
+      <button class="type-tab active" onclick="setType('notes', this)"><i class="ti ti-file-text"></i> Notes</button>
+      <button class="type-tab" onclick="setType('cats', this)"><i class="ti ti-clipboard-check"></i> CATs</button>
+      <button class="type-tab" onclick="setType('exams', this)"><i class="ti ti-file-certificate"></i> Exams</button>
+    </div>
+
+    <!-- Empty state -->
+    <div class="empty-state" id="emptyState" style="display:none;">
+      <i class="ti ti-folder-open"></i>
+      <p>No materials here yet — check back soon!</p>
+    </div>
+
+    <!-- Resources Grid -->
+    <div class="resources-grid" id="resourcesGrid">
+
+      <!-- ✏️ ADD CARDS BELOW
+           data-level: primary | junior | senior
+           data-type:  notes | cats | exams
+      -->
+
+      <!-- SENIOR SECONDARY — NOTES -->
+
+      <div class="resource-card" data-level="senior" data-type="notes">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 Community Service Learning — Part 1</h4>
+            <p>Notes</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+          <span class="resource-tag">CSL</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1Q2FqwzTTC2nkKiEflGOLTZLC5s6bwiAz/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1Q2FqwzTTC2nkKiEflGOLTZLC5s6bwiAz/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="notes">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 Community Service Learning — Part 2</h4>
+            <p>Notes</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+          <span class="resource-tag">CSL</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1cUZeuVc25iOBdHSJhmxdvv3lHMROd1pV/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1cUZeuVc25iOBdHSJhmxdvv3lHMROd1pV/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="notes">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 Community Service Learning — Part 3</h4>
+            <p>Notes</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+          <span class="resource-tag">CSL</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/12b0fGtCPbCew2jVrLWenF-wdQ_i45_Lx/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/12b0fGtCPbCew2jVrLWenF-wdQ_i45_Lx/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="notes">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 Community Service Learning — Part 4</h4>
+            <p>Notes</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+          <span class="resource-tag">CSL</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/15QJPbYPrny_3NSWWu_bUJ4HSFOpTYngf/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/15QJPbYPrny_3NSWWu_bUJ4HSFOpTYngf/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="notes">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 Geography Notes</h4>
+            <p>Notes</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+          <span class="resource-tag">Geography</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/13JHoaDH_eghiQr-Ic0-SgZJE4oUQCo-a/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/13JHoaDH_eghiQr-Ic0-SgZJE4oUQCo-a/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="notes">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 History & Citizenship Notes</h4>
+            <p>Notes</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+          <span class="resource-tag">History</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1BqzmMhyIC7lTHMB_z6VliulvDX3wMvfZ/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1BqzmMhyIC7lTHMB_z6VliulvDX3wMvfZ/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <!-- SENIOR SECONDARY — CATS -->
+
+      <div class="resource-card" data-level="senior" data-type="cats">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 Geography CAT 1</h4>
+            <p>Continuous Assessment Test</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+          <span class="resource-tag">Geography</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1bJAl78EZ6BJ_TsBEAugYLJcGYCFs18U0/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1bJAl78EZ6BJ_TsBEAugYLJcGYCFs18U0/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="cats">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 Geography CAT 2</h4>
+            <p>Continuous Assessment Test</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+          <span class="resource-tag">Geography</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1bWNmM4F3MyCzXEqSFJPpVFn_6MDYEfcL/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1bWNmM4F3MyCzXEqSFJPpVFn_6MDYEfcL/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="cats">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 Chemistry CAT 1</h4>
+            <p>Continuous Assessment Test</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+          <span class="resource-tag">Chemistry</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1G_E3vtJ2uZWJyKUGvRpFkarIeNHzSANR/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1G_E3vtJ2uZWJyKUGvRpFkarIeNHzSANR/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="cats">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 Chemistry CAT 2</h4>
+            <p>Continuous Assessment Test</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+          <span class="resource-tag">Chemistry</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1EUnP7nuNyiG4bkg2kW4WrdsqT4n0XtLU/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1EUnP7nuNyiG4bkg2kW4WrdsqT4n0XtLU/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="cats">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 Community Service Learning CAT</h4>
+            <p>Continuous Assessment Test</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+          <span class="resource-tag">CSL</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1wZd-jRFMYfPHZ9AHDBxBFpUMwdBTwJlS/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1wZd-jRFMYfPHZ9AHDBxBFpUMwdBTwJlS/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="cats">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta">
+            <h4>Grade 10 History & Citizenship CAT</h4>
+            <p>Continuous Assessment Test</p>
+          </div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+          <span class="resource-tag">History</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1k5AuoWYwI-ue__eH9YSMXPEgs2arKorS/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1k5AuoWYwI-ue__eH9YSMXPEgs2arKorS/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <!-- SENIOR SECONDARY — GRADE 10 MID TERM 2 EXAMS -->
+
+      <div class="resource-card" data-level="senior" data-type="exams">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta"><h4>Grade 10 Literature in English — Mid Term 2</h4><p>Mid Term 2 Exam</p></div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+          <span class="resource-tag">Literature</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1ubmkkLWNQblsHh1hTGCu5dqtaAH6xM7W/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1ubmkkLWNQblsHh1hTGCu5dqtaAH6xM7W/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="exams">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta"><h4>Grade 10 Physics — Mid Term 2</h4><p>Mid Term 2 Exam</p></div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+          <span class="resource-tag">Physics</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1EylNYLTa9EwftEoDBye4lL0ZhmjmA2bH/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1EylNYLTa9EwftEoDBye4lL0ZhmjmA2bH/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="exams">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta"><h4>Grade 10 History and Citizenship — Mid Term 2</h4><p>Mid Term 2 Exam</p></div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+          <span class="resource-tag">History</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1-rk9DKQbglg6cTBa0_0Le87jBusu6wl8/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1-rk9DKQbglg6cTBa0_0Le87jBusu6wl8/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="exams">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta"><h4>Grade 10 Essential Mathematics — Mid Term 2</h4><p>Mid Term 2 Exam</p></div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+          <span class="resource-tag">Mathematics</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1hxZ_ckN0U9QnHqNrBiHNAG3BcPWyXSdp/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1hxZ_ckN0U9QnHqNrBiHNAG3BcPWyXSdp/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="exams">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta"><h4>Grade 10 English — Mid Term 2</h4><p>Mid Term 2 Exam</p></div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+          <span class="resource-tag">English</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1XhKkvpt-2fmfLe_rt47zJSiY3ck43May/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1XhKkvpt-2fmfLe_rt47zJSiY3ck43May/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="exams">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta"><h4>Grade 10 Computer Science — Mid Term 2</h4><p>Mid Term 2 Exam</p></div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+          <span class="resource-tag">Computer Science</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1t5udxJ5DSohmOYvTQN69sDJqHWKfIBPI/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1t5udxJ5DSohmOYvTQN69sDJqHWKfIBPI/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="exams">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta"><h4>Grade 10 Chemistry — Mid Term 2</h4><p>Mid Term 2 Exam</p></div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+          <span class="resource-tag">Chemistry</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1oLPWcnH12lPri7zo_XEANZD-0lyhFVMX/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1oLPWcnH12lPri7zo_XEANZD-0lyhFVMX/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="exams">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta"><h4>Grade 10 Business Studies — Mid Term 2</h4><p>Mid Term 2 Exam</p></div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+          <span class="resource-tag">Business Studies</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/14kvO2Tr6y5goD-UWyarYxc7mQAzZCOnQ/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/14kvO2Tr6y5goD-UWyarYxc7mQAzZCOnQ/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="exams">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta"><h4>Grade 10 Biology — Mid Term 2</h4><p>Mid Term 2 Exam</p></div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+          <span class="resource-tag">Biology</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1M8LUijJU0f0CkjWtWM2wy5Zgj3DGuje7/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1M8LUijJU0f0CkjWtWM2wy5Zgj3DGuje7/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="exams">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta"><h4>Grade 10 Community Service Learning — Mid Term 2</h4><p>Mid Term 2 Exam</p></div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+          <span class="resource-tag">Community Service</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1S9DbHUxAciKYz3kPsDhw5T0OL0LTuTq-/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1S9DbHUxAciKYz3kPsDhw5T0OL0LTuTq-/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <!-- SENIOR SECONDARY — GRADE 10 TERM 2 CBC HQ SERIES 1 ENDTERM EXAMS -->
+
+      <div class="resource-card" data-level="senior" data-type="exams">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta"><h4>Grade 10 Physics — Term 2 CBC HQ Series 1 Endterm</h4><p>Endterm Exam</p></div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+          <span class="resource-tag">Physics</span>
+          <span class="resource-tag new-badge">New</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1_EmFDMXWdb8lyl5hw1dIFRYkT1xPfonq/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1_EmFDMXWdb8lyl5hw1dIFRYkT1xPfonq/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="exams">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta"><h4>Grade 10 History and Citizenship — Term 2 CBC HQ Series 1 Endterm</h4><p>Endterm Exam</p></div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+          <span class="resource-tag">History</span>
+          <span class="resource-tag new-badge">New</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1ikT1vyPTqr-sAutB4QQ2xe7pLZKLCVI1/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1ikT1vyPTqr-sAutB4QQ2xe7pLZKLCVI1/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="exams">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta"><h4>Grade 10 Literature in English — Term 2 CBC HQ Series 1 Endterm</h4><p>Endterm Exam</p></div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+          <span class="resource-tag">Literature</span>
+          <span class="resource-tag new-badge">New</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1SgrDAfPuetYMhcSxbgb_xaUv0fhG95wx/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1SgrDAfPuetYMhcSxbgb_xaUv0fhG95wx/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="exams">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta"><h4>Grade 10 Geography — Term 2 CBC HQ Series 1 Endterm</h4><p>Endterm Exam</p></div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+          <span class="resource-tag">Geography</span>
+          <span class="resource-tag new-badge">New</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1BoB0TJBZDdGMFkmOtCWlJTGrMrhBcfSH/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1BoB0TJBZDdGMFkmOtCWlJTGrMrhBcfSH/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="exams">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta"><h4>Grade 10 Community Service Learning — Term 2 CBC HQ Series 1 Endterm</h4><p>Endterm Exam</p></div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+          <span class="resource-tag">Community Service</span>
+          <span class="resource-tag new-badge">New</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1lOt-fEA3Gq6zJ8E7NJsoK0JeosiPzAnv/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1lOt-fEA3Gq6zJ8E7NJsoK0JeosiPzAnv/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="senior" data-type="exams">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta"><h4>Grade 10 Chemistry — Term 2 CBC HQ Series 1 Endterm</h4><p>Endterm Exam</p></div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag senior">Senior Secondary</span>
+          <span class="resource-tag">Chemistry</span>
+          <span class="resource-tag new-badge">New</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/11WfXhUrFNGTpujEh-Fgx10c19O7i3OZr/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/11WfXhUrFNGTpujEh-Fgx10c19O7i3OZr/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <!-- JUNIOR SECONDARY — GRADE 7 DISTINCTION EXAMS -->
+
+      <div class="resource-card" data-level="junior" data-type="exams">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta"><h4>Grade 7 Social Studies — Distinction Exam</h4><p>Distinction Exam</p></div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag junior">Junior Secondary</span>
+          <span class="resource-tag">Social Studies</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1wSz9N-puteF5ZdoT7yn-CeMPj9qGZbd0/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1wSz9N-puteF5ZdoT7yn-CeMPj9qGZbd0/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="junior" data-type="exams">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta"><h4>Grade 7 Pre Technical Paper 2 — Distinction Exam</h4><p>Distinction Exam</p></div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag junior">Junior Secondary</span>
+          <span class="resource-tag">Pre Technical</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1qhN0bYdN0_dO4S-BWqtxZsXseB0RkDDf/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1qhN0bYdN0_dO4S-BWqtxZsXseB0RkDDf/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="junior" data-type="exams">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta"><h4>Grade 7 Pre Technical Paper 1 — Distinction Exam</h4><p>Distinction Exam</p></div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag junior">Junior Secondary</span>
+          <span class="resource-tag">Pre Technical</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1zk6u9sh1TQIXnWTFt1r-XjRQGrOXEBp6/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1zk6u9sh1TQIXnWTFt1r-XjRQGrOXEBp6/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="junior" data-type="exams">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta"><h4>Grade 7 Marking Scheme — Distinction Exam</h4><p>Distinction Exam</p></div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag junior">Junior Secondary</span>
+          <span class="resource-tag">Marking Scheme</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1nvTVcbPPQlgEBDlRAOyNF1WlnKUwPNXA/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1nvTVcbPPQlgEBDlRAOyNF1WlnKUwPNXA/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="junior" data-type="exams">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta"><h4>Grade 7 Kiswahili Paper 2 — Distinction Exam</h4><p>Distinction Exam</p></div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag junior">Junior Secondary</span>
+          <span class="resource-tag">Kiswahili</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1zOcv3TrXtKg3FtzYYGbT0k_f3NpjcP4v/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1zOcv3TrXtKg3FtzYYGbT0k_f3NpjcP4v/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="junior" data-type="exams">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta"><h4>Grade 7 Kiswahili Paper 1 — Distinction Exam</h4><p>Distinction Exam</p></div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag junior">Junior Secondary</span>
+          <span class="resource-tag">Kiswahili</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1YXv0T06D_bEAw9df2GnCw-ol0IHfYODg/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1YXv0T06D_bEAw9df2GnCw-ol0IHfYODg/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="junior" data-type="exams">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta"><h4>Grade 7 Integrated Science Paper 2 — Distinction Exam</h4><p>Distinction Exam</p></div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag junior">Junior Secondary</span>
+          <span class="resource-tag">Integrated Science</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1CIJAk-1XcqF2ByCnmDK7uzReKIjRWuRF/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1CIJAk-1XcqF2ByCnmDK7uzReKIjRWuRF/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="junior" data-type="exams">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta"><h4>Grade 7 Integrated Science Paper 1 — Distinction Exam</h4><p>Distinction Exam</p></div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag junior">Junior Secondary</span>
+          <span class="resource-tag">Integrated Science</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1dDpRguFs6IqHg9zR4wy9ge9H_3v4Mt0_/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1dDpRguFs6IqHg9zR4wy9ge9H_3v4Mt0_/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="junior" data-type="exams">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta"><h4>Grade 7 English Paper 2 — Distinction Exam</h4><p>Distinction Exam</p></div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag junior">Junior Secondary</span>
+          <span class="resource-tag">English</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1UO7aGVZ3oigGqam6ZNWmh8-DV3C6WBiK/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1UO7aGVZ3oigGqam6ZNWmh8-DV3C6WBiK/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="junior" data-type="exams">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta"><h4>Grade 7 Creative Arts and Sports Paper 2 — Distinction Exam</h4><p>Distinction Exam</p></div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag junior">Junior Secondary</span>
+          <span class="resource-tag">Creative Arts</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1nmuY59EaHlF5kcIS7N_I9zdXu3NbIn2s/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1nmuY59EaHlF5kcIS7N_I9zdXu3NbIn2s/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="junior" data-type="exams">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta"><h4>Grade 7 CRE — Distinction Exam</h4><p>Distinction Exam</p></div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag junior">Junior Secondary</span>
+          <span class="resource-tag">CRE</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1PKH662fhBQe1BlLbXWZ5iMi_s6_354qn/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1PKH662fhBQe1BlLbXWZ5iMi_s6_354qn/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="junior" data-type="exams">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta"><h4>Grade 7 English Paper 1 — Distinction Exam</h4><p>Distinction Exam</p></div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag junior">Junior Secondary</span>
+          <span class="resource-tag">English</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1dARbGuV0A01fgAbEIJxLMf_1iQLFkPkJ/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1dARbGuV0A01fgAbEIJxLMf_1iQLFkPkJ/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="junior" data-type="exams">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta"><h4>Grade 7 CRE — Distinction Exam</h4><p>Distinction Exam</p></div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag junior">Junior Secondary</span>
+          <span class="resource-tag">CRE</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1ONYavkHVUcgb3kaxKF3r-iG-cY3CcaDm/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1ONYavkHVUcgb3kaxKF3r-iG-cY3CcaDm/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="junior" data-type="exams">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta"><h4>Grade 7 Agriculture Paper 2 — Distinction Exam</h4><p>Distinction Exam</p></div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag junior">Junior Secondary</span>
+          <span class="resource-tag">Agriculture</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1KT7xsbIdoBbXbet-DWt1k6jIpKwT8qO3/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1KT7xsbIdoBbXbet-DWt1k6jIpKwT8qO3/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="junior" data-type="exams">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta"><h4>Grade 7 Agriculture Paper 1 — Distinction Exam</h4><p>Distinction Exam</p></div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag junior">Junior Secondary</span>
+          <span class="resource-tag">Agriculture</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1yLngAWwOIu6liZI-ySexwrarvE9hZAYL/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1yLngAWwOIu6liZI-ySexwrarvE9hZAYL/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="junior" data-type="exams">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta"><h4>Grade 7 Mathematics — Distinction Exam</h4><p>Distinction Exam</p></div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag junior">Junior Secondary</span>
+          <span class="resource-tag">Mathematics</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/13ecsxzfmTjqgCSuIaugZrRNYpl3k61zK/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/13ecsxzfmTjqgCSuIaugZrRNYpl3k61zK/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+      <div class="resource-card" data-level="primary" data-type="exams">
+        <div class="resource-card-top">
+          <div class="resource-file-icon pdf"><i class="ti ti-file-type-pdf"></i></div>
+          <div class="resource-meta"><h4>Grade 6 Mathematics — Distinction Exam</h4><p>Distinction Exam</p></div>
+        </div>
+        <div class="resource-tags">
+          <span class="resource-tag primary">Primary</span>
+          <span class="resource-tag">Mathematics</span>
+        </div>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1jqM5Uw-mJb390T6ctcdPZLZmebA1YSH3/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1jqM5Uw-mJb390T6ctcdPZLZmebA1YSH3/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Request a document -->
+    <div class="request-doc-banner">
+      <p><strong>Can't find what you need?</strong>Tell us and we'll try to add it.</p>
+      <a href="https://whatsapp.com/channel/0029VbDIYlKJ93wTknUVlJ0A" target="_blank"><i class="ti ti-brand-whatsapp"></i> Request on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+
+<script>
+  let currentLevel = 'primary';
+  let currentType = 'notes';
+  let pendingDownloadUrl = null;
+
+  function setLevel(level, btn) {
+    currentLevel = level;
+    document.querySelectorAll('.level-tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    filterCards();
+  }
+
+  function setType(type, btn) {
+    currentType = type;
+    document.querySelectorAll('.type-tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    filterCards();
+  }
+
+  function filterCards() {
+    const gridEl = document.getElementById('resourcesGrid');
+    if (!gridEl) return;
+    const cards = gridEl.querySelectorAll('.resource-card');
+    const searchEl = document.getElementById('resourceSearch');
+    const term = searchEl ? searchEl.value.trim().toLowerCase() : '';
+    let visible = 0;
+    cards.forEach(card => {
+      const levelTypeMatch = card.dataset.level === currentLevel && card.dataset.type === currentType;
+      const textMatch = !term || card.innerText.toLowerCase().includes(term);
+      const match = levelTypeMatch && textMatch;
+      card.style.display = match ? '' : 'none';
+      if (match) visible++;
+    });
+    const emptyEl = document.getElementById('emptyState');
+    if (emptyEl) emptyEl.style.display = visible === 0 ? 'flex' : 'none';
+  }
+
+  // ── Teachers' Corner filtering (kept separate from the main Resources grid) ──
+  let currentTLevel = 'primary';
+  let currentTType = 'schemes';
+  let currentTTerm = 'term1';
+  let currentTSubject = 'all';
+
+  function setTLevel(level, btn) {
+    currentTLevel = level;
+    document.querySelectorAll('.t-level-tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    filterTeacherCards();
+  }
+
+  function setTType(type, btn) {
+    currentTType = type;
+    document.querySelectorAll('.t-type-tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    filterTeacherCards();
+  }
+
+  function setTTerm(term, btn) {
+    currentTTerm = term;
+    document.querySelectorAll('.t-term-tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    filterTeacherCards();
+  }
+
+  function setTSubject(subject) {
+    currentTSubject = subject;
+    filterTeacherCards();
+  }
+
+  // Builds the Subject dropdown from whatever data-subject values exist on cards
+  function refreshSubjectDropdown() {
+    const select = document.getElementById('teacherSubject');
+    if (!select) return;
+    const subjects = new Set();
+    document.querySelectorAll('#teacherGrid .resource-card').forEach(card => {
+      if (card.dataset.subject) subjects.add(card.dataset.subject);
+    });
+    const sorted = Array.from(subjects).sort((a, b) => a.localeCompare(b));
+    select.innerHTML = '<option value="all">All Subjects</option>' +
+      sorted.map(s => `<option value="${s}">${s}</option>`).join('');
+  }
+
+  function filterTeacherCards() {
+    const tGridEl = document.getElementById('teacherGrid');
+    if (!tGridEl) return;
+    const cards = tGridEl.querySelectorAll('.resource-card');
+    const searchEl = document.getElementById('teacherSearch');
+    const searchTerm = searchEl ? searchEl.value.trim().toLowerCase() : '';
+    let visible = 0;
+    cards.forEach(card => {
+      const cardTerm = card.dataset.term || 'all';
+      const cardSubject = card.dataset.subject || 'all';
+      const levelTypeMatch = card.dataset.level === currentTLevel && card.dataset.type === currentTType;
+      const termMatch = cardTerm === 'all' || cardTerm === currentTTerm;
+      const subjectMatch = currentTSubject === 'all' || cardSubject === currentTSubject;
+      const textMatch = !searchTerm || card.innerText.toLowerCase().includes(searchTerm);
+      const match = levelTypeMatch && termMatch && subjectMatch && textMatch;
+      card.style.display = match ? '' : 'none';
+      if (match) visible++;
+    });
+    const tEmptyEl = document.getElementById('teacherEmptyState');
+    if (tEmptyEl) tEmptyEl.style.display = visible === 0 ? 'flex' : 'none';
+  }
+
+  // Intercept download clicks
+  document.addEventListener('DOMContentLoaded', function () {
+    filterCards();
+    refreshSubjectDropdown();
+    filterTeacherCards();
+    initResourceCounters();
+    document.querySelectorAll('.resource-download').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        pendingDownloadUrl = this.getAttribute('href');
+        pendingDownloadId = this.closest('.resource-card') ? this.closest('.resource-card').dataset.counterId : null;
+        const user = window._currentUser ? window._currentUser() : null;
+        if (!user) {
+          window._pendingDownloadAfterAuth = true;
+          document.getElementById('authModal').classList.add('open');
+        } else {
+          document.getElementById('subscribeModal').classList.add('open');
+        }
+      });
+    });
+  });
+
+  // ── View / download counters (CounterAPI v1, no auth needed) ──
+  const COUNTER_NS = 'cbchq-b7f3-site';
+  const COUNTER_BASE = 'https://api.counterapi.dev/v1';
+  let pendingDownloadId = null;
+
+  function slugifyCounter(text) {
+    return text.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '').slice(0, 70);
+  }
+
+  function initResourceCounters() {
+    const cards = document.querySelectorAll('.resource-card');
+    cards.forEach(function (card) {
+      const titleEl = card.querySelector('h4');
+      if (!titleEl) return;
+      const id = slugifyCounter(titleEl.textContent);
+      card.dataset.counterId = id;
+
+      const stats = document.createElement('div');
+      stats.className = 'resource-stats';
+      stats.innerHTML =
+        '<span class="stat-views"><i class="ti ti-eye"></i><span class="stat-views-count">–</span></span>' +
+        '<span class="stat-downloads"><i class="ti ti-download"></i><span class="stat-downloads-count">–</span></span>';
+      const tagsEl = card.querySelector('.resource-tags');
+      if (tagsEl) tagsEl.insertAdjacentElement('afterend', stats);
+
+      // Show current download count without incrementing it
+      fetch(COUNTER_BASE + '/' + COUNTER_NS + '/dl-' + id)
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          const el = stats.querySelector('.stat-downloads-count');
+          if (el) el.textContent = (d && typeof d.count === 'number') ? d.count : 0;
+        })
+        .catch(function () {
+          const el = stats.querySelector('.stat-downloads-count');
+          if (el) el.textContent = '0';
+        });
+    });
+
+    // Only counts a view once a card is actually scrolled into view (and only once per card per visit)
+    const seenViews = new Set();
+    const viewObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        const card = entry.target;
+        const id = card.dataset.counterId;
+        if (!id || seenViews.has(id)) return;
+        seenViews.add(id);
+        fetch(COUNTER_BASE + '/' + COUNTER_NS + '/view-' + id + '/up')
+          .then(function (r) { return r.json(); })
+          .then(function (d) {
+            const el = card.querySelector('.stat-views-count');
+            if (el) el.textContent = (d && typeof d.count === 'number') ? d.count : '';
+          })
+          .catch(function () {});
+        viewObserver.unobserve(card);
+      });
+    }, { threshold: 0.4 });
+
+    cards.forEach(function (card) { viewObserver.observe(card); });
+  }
+
+  function trackDownload(id) {
+    if (!id) return;
+    fetch(COUNTER_BASE + '/' + COUNTER_NS + '/dl-' + id + '/up')
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        document.querySelectorAll('.resource-card[data-counter-id="' + id + '"] .stat-downloads-count').forEach(function (el) {
+          el.textContent = (d && typeof d.count === 'number') ? d.count : '';
+        });
+      })
+      .catch(function () {});
+  }
+
+  function openAuthModal() {
+    document.getElementById('authModal').classList.add('open');
+  }
+
+  function closeModal() {
+    document.getElementById('subscribeModal').classList.remove('open');
+    pendingDownloadUrl = null;
+  }
+
+  function subscribeAndDownload() {
+    window.open('https://youtube.com/@cbchq-q2f?si=9rKxe6Xb1U5Kwz94', '_blank');
+    setTimeout(function () {
+      if (pendingDownloadUrl) {
+        window.open(pendingDownloadUrl, '_blank');
+        trackDownload(pendingDownloadId);
+        pendingDownloadId = null;
+      }
+      closeModal();
+    }, 1500);
+  }
+
+  // Close modal when clicking outside
+  document.addEventListener('DOMContentLoaded', function () {
+    const sm = document.getElementById('subscribeModal');
+    if (sm) sm.addEventListener('click', function (e) {
+      if (e.target === sm) closeModal();
+    });
+  });
+</script>
+
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">H</div>
+        <div class="logo-text">CBC <span>HQ</span></div>
+      </a>
+      <p>Free CBC educational materials for teachers and students across Kenya.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="resources.html">Notes</a></li>
+        <li><a href="resources.html">Tests</a></li>
+        <li><a href="resources.html">Past exams</a></li>
+        <li><a href="https://youtube.com/@cbchq-q2f?si=9rKxe6Xb1U5Kwz94" target="_blank">Videos</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Levels</h4>
+      <ul>
+        <li><a href="resources.html">Primary (1–6)</a></li>
+        <li><a href="resources.html">Junior secondary (7–9)</a></li>
+        <li><a href="resources.html">Senior secondary (10–12)</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>About</h4>
+      <ul>
+        <li><a href="index.html#about">Our team</a></li>
+        <li><a href="https://whatsapp.com/channel/0029VbDIYlKJ93wTknUVlJ0A" target="_blank">Contact us</a></li>
+        <li><a href="https://youtube.com/@cbchq-q2f?si=9rKxe6Xb1U5Kwz94" target="_blank">YouTube channel</a></li>
+        <li><a href="https://whatsapp.com/channel/0029VbDIYlKJ93wTknUVlJ0A" target="_blank">WhatsApp channel</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 <span>CBC HQ</span> · Made with ❤️ for Kenyan students and teachers
+  </div>
+</footer>
+<!-- ── Subscribe Modal ── -->
+<div class="modal-overlay" id="subscribeModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+    <div class="modal-yt-icon"><i class="ti ti-brand-youtube"></i></div>
+    <h2>Subscribe to unlock this download</h2>
+    <p>CBC HQ materials are free! We just ask that you subscribe to our YouTube channel where we post video lessons, exam tips, and more for Kenyan students.</p>
+    <div class="modal-actions">
+      <button class="modal-subscribe-btn" onclick="subscribeAndDownload()">
+        <i class="ti ti-brand-youtube"></i> Subscribe on YouTube & Download
+      </button>
+    </div>
+  </div>
+</div>
+<!-- Auth Gate Modal -->
+<div class="auth-modal-overlay" id="authModal">
+  <div class="auth-modal">
+    <div class="auth-modal-logo">📚</div>
+    <h2>Sign in to download</h2>
+    <p>Create a free CBC HQ account to access all study materials. Sign in with your Google account — it only takes a second!</p>
+    <button class="google-signin-btn" onclick="signInWithGoogle()">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
+      Continue with Google
+    </button>
+    <p class="auth-privacy-note">We only use your name, email, and profile photo to personalize your account — never shared or sold. You can sign out anytime.</p>
+  </div>
+</div>
+
+<!-- Firebase SDK -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged }
+    from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyCqcyPoSuxfS8f6kxIyubS3gjiAHVFJcwk",
+    authDomain: "cbc-hq-83252.firebaseapp.com",
+    projectId: "cbc-hq-83252",
+    storageBucket: "cbc-hq-83252.firebasestorage.app",
+    messagingSenderId: "715864331652",
+    appId: "1:715864331652:web:e30198723c33cc1f84f9d1",
+    measurementId: "G-VF7D83FNZ9"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+
+  let currentUser = null;
+
+  // Watch auth state
+  onAuthStateChanged(auth, (user) => {
+    currentUser = user;
+    const navAuthArea = document.getElementById('navAuthArea');
+    if (user) {
+      navAuthArea.innerHTML = `
+        <div class="nav-user-menu">
+          <img class="nav-user-avatar" src="${user.photoURL}" alt="${user.displayName}" title="${user.displayName}" />
+          <span class="nav-user-name">${user.displayName.split(' ')[0]}</span>
+          <button class="nav-signout-btn" id="signOutBtn">Sign out</button>
+        </div>`;
+      document.getElementById('signOutBtn').addEventListener('click', () => {
+        signOut(auth);
+      });
+    } else {
+      navAuthArea.innerHTML = `
+        <button class="nav-auth-btn" id="signInNavBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="18" height="18"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
+          Sign in
+        </button>`;
+      document.getElementById('signInNavBtn').addEventListener('click', openAuthModal);
+    }
+  });
+
+  // Expose functions to global scope
+  window.signInWithGoogle = async function () {
+    try {
+      await signInWithPopup(auth, provider);
+      document.getElementById('authModal').classList.remove('open');
+      // If there was a pending download, trigger subscribe modal
+      if (window._pendingDownloadAfterAuth) {
+        window._pendingDownloadAfterAuth = false;
+        document.getElementById('subscribeModal').classList.add('open');
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  window._currentUser = () => currentUser;
+</script>
+
+</body>
+</html>
