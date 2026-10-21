@@ -620,6 +620,13 @@
     .resource-tag.junior { background: #e3f2fd; color: #1565c0; }
     .resource-tag.senior { background: #f3e5f5; color: #6a1b9a; }
     .resource-tag.primary { background: #e8f5e9; color: var(--green-mid); }
+    .resource-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: auto;
+    }
     .resource-download {
       display: flex;
       align-items: center;
@@ -632,6 +639,18 @@
       transition: color 0.2s;
     }
     .resource-download:hover { color: var(--green-dark); }
+    .resource-actions .resource-download { margin-top: 0; }
+    .resource-preview {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--gray);
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .resource-preview:hover { color: var(--green-dark); }
 
     .mobile-menu {
       display: none;
@@ -978,9 +997,14 @@
           <span class="resource-tag senior">Senior Secondary</span>
           <span class="resource-tag">CSL</span>
         </div>
-        <a href="https://drive.google.com/file/d/1Q2FqwzTTC2nkKiEflGOLTZLC5s6bwiAz/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1Q2FqwzTTC2nkKiEflGOLTZLC5s6bwiAz/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1Q2FqwzTTC2nkKiEflGOLTZLC5s6bwiAz/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="notes">
@@ -995,9 +1019,14 @@
           <span class="resource-tag senior">Senior Secondary</span>
           <span class="resource-tag">CSL</span>
         </div>
-        <a href="https://drive.google.com/file/d/1cUZeuVc25iOBdHSJhmxdvv3lHMROd1pV/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1cUZeuVc25iOBdHSJhmxdvv3lHMROd1pV/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1cUZeuVc25iOBdHSJhmxdvv3lHMROd1pV/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="notes">
@@ -1012,9 +1041,14 @@
           <span class="resource-tag senior">Senior Secondary</span>
           <span class="resource-tag">CSL</span>
         </div>
-        <a href="https://drive.google.com/file/d/12b0fGtCPbCew2jVrLWenF-wdQ_i45_Lx/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/12b0fGtCPbCew2jVrLWenF-wdQ_i45_Lx/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/12b0fGtCPbCew2jVrLWenF-wdQ_i45_Lx/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="notes">
@@ -1029,9 +1063,14 @@
           <span class="resource-tag senior">Senior Secondary</span>
           <span class="resource-tag">CSL</span>
         </div>
-        <a href="https://drive.google.com/file/d/15QJPbYPrny_3NSWWu_bUJ4HSFOpTYngf/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/15QJPbYPrny_3NSWWu_bUJ4HSFOpTYngf/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/15QJPbYPrny_3NSWWu_bUJ4HSFOpTYngf/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="notes">
@@ -1046,9 +1085,14 @@
           <span class="resource-tag senior">Senior Secondary</span>
           <span class="resource-tag">Geography</span>
         </div>
-        <a href="https://drive.google.com/file/d/13JHoaDH_eghiQr-Ic0-SgZJE4oUQCo-a/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/13JHoaDH_eghiQr-Ic0-SgZJE4oUQCo-a/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/13JHoaDH_eghiQr-Ic0-SgZJE4oUQCo-a/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="notes">
@@ -1063,9 +1107,14 @@
           <span class="resource-tag senior">Senior Secondary</span>
           <span class="resource-tag">History</span>
         </div>
-        <a href="https://drive.google.com/file/d/1BqzmMhyIC7lTHMB_z6VliulvDX3wMvfZ/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1BqzmMhyIC7lTHMB_z6VliulvDX3wMvfZ/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1BqzmMhyIC7lTHMB_z6VliulvDX3wMvfZ/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <!-- SENIOR SECONDARY — CATS -->
@@ -1082,9 +1131,14 @@
           <span class="resource-tag senior">Senior Secondary</span>
           <span class="resource-tag">Geography</span>
         </div>
-        <a href="https://drive.google.com/file/d/1bJAl78EZ6BJ_TsBEAugYLJcGYCFs18U0/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1bJAl78EZ6BJ_TsBEAugYLJcGYCFs18U0/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1bJAl78EZ6BJ_TsBEAugYLJcGYCFs18U0/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="cats">
@@ -1099,9 +1153,14 @@
           <span class="resource-tag senior">Senior Secondary</span>
           <span class="resource-tag">Geography</span>
         </div>
-        <a href="https://drive.google.com/file/d/1bWNmM4F3MyCzXEqSFJPpVFn_6MDYEfcL/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1bWNmM4F3MyCzXEqSFJPpVFn_6MDYEfcL/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1bWNmM4F3MyCzXEqSFJPpVFn_6MDYEfcL/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="cats">
@@ -1116,9 +1175,14 @@
           <span class="resource-tag senior">Senior Secondary</span>
           <span class="resource-tag">Chemistry</span>
         </div>
-        <a href="https://drive.google.com/file/d/1G_E3vtJ2uZWJyKUGvRpFkarIeNHzSANR/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1G_E3vtJ2uZWJyKUGvRpFkarIeNHzSANR/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1G_E3vtJ2uZWJyKUGvRpFkarIeNHzSANR/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="cats">
@@ -1133,9 +1197,14 @@
           <span class="resource-tag senior">Senior Secondary</span>
           <span class="resource-tag">Chemistry</span>
         </div>
-        <a href="https://drive.google.com/file/d/1EUnP7nuNyiG4bkg2kW4WrdsqT4n0XtLU/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1EUnP7nuNyiG4bkg2kW4WrdsqT4n0XtLU/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1EUnP7nuNyiG4bkg2kW4WrdsqT4n0XtLU/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="cats">
@@ -1150,9 +1219,14 @@
           <span class="resource-tag senior">Senior Secondary</span>
           <span class="resource-tag">CSL</span>
         </div>
-        <a href="https://drive.google.com/file/d/1wZd-jRFMYfPHZ9AHDBxBFpUMwdBTwJlS/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1wZd-jRFMYfPHZ9AHDBxBFpUMwdBTwJlS/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1wZd-jRFMYfPHZ9AHDBxBFpUMwdBTwJlS/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="cats">
@@ -1167,9 +1241,14 @@
           <span class="resource-tag senior">Senior Secondary</span>
           <span class="resource-tag">History</span>
         </div>
-        <a href="https://drive.google.com/file/d/1k5AuoWYwI-ue__eH9YSMXPEgs2arKorS/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1k5AuoWYwI-ue__eH9YSMXPEgs2arKorS/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1k5AuoWYwI-ue__eH9YSMXPEgs2arKorS/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <!-- SENIOR SECONDARY — GRADE 10 MID TERM 2 EXAMS -->
@@ -1183,9 +1262,14 @@
           <span class="resource-tag senior">Senior Secondary</span>
           <span class="resource-tag">Literature</span>
         </div>
-        <a href="https://drive.google.com/file/d/1ubmkkLWNQblsHh1hTGCu5dqtaAH6xM7W/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1ubmkkLWNQblsHh1hTGCu5dqtaAH6xM7W/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1ubmkkLWNQblsHh1hTGCu5dqtaAH6xM7W/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="exams">
@@ -1197,9 +1281,14 @@
           <span class="resource-tag senior">Senior Secondary</span>
           <span class="resource-tag">Physics</span>
         </div>
-        <a href="https://drive.google.com/file/d/1EylNYLTa9EwftEoDBye4lL0ZhmjmA2bH/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1EylNYLTa9EwftEoDBye4lL0ZhmjmA2bH/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1EylNYLTa9EwftEoDBye4lL0ZhmjmA2bH/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="exams">
@@ -1211,9 +1300,14 @@
           <span class="resource-tag senior">Senior Secondary</span>
           <span class="resource-tag">History</span>
         </div>
-        <a href="https://drive.google.com/file/d/1-rk9DKQbglg6cTBa0_0Le87jBusu6wl8/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1-rk9DKQbglg6cTBa0_0Le87jBusu6wl8/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1-rk9DKQbglg6cTBa0_0Le87jBusu6wl8/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="exams">
@@ -1225,9 +1319,14 @@
           <span class="resource-tag senior">Senior Secondary</span>
           <span class="resource-tag">Mathematics</span>
         </div>
-        <a href="https://drive.google.com/file/d/1hxZ_ckN0U9QnHqNrBiHNAG3BcPWyXSdp/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1hxZ_ckN0U9QnHqNrBiHNAG3BcPWyXSdp/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1hxZ_ckN0U9QnHqNrBiHNAG3BcPWyXSdp/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="exams">
@@ -1239,9 +1338,14 @@
           <span class="resource-tag senior">Senior Secondary</span>
           <span class="resource-tag">English</span>
         </div>
-        <a href="https://drive.google.com/file/d/1XhKkvpt-2fmfLe_rt47zJSiY3ck43May/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1XhKkvpt-2fmfLe_rt47zJSiY3ck43May/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1XhKkvpt-2fmfLe_rt47zJSiY3ck43May/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="exams">
@@ -1253,9 +1357,14 @@
           <span class="resource-tag senior">Senior Secondary</span>
           <span class="resource-tag">Computer Science</span>
         </div>
-        <a href="https://drive.google.com/file/d/1t5udxJ5DSohmOYvTQN69sDJqHWKfIBPI/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1t5udxJ5DSohmOYvTQN69sDJqHWKfIBPI/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1t5udxJ5DSohmOYvTQN69sDJqHWKfIBPI/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="exams">
@@ -1267,9 +1376,14 @@
           <span class="resource-tag senior">Senior Secondary</span>
           <span class="resource-tag">Chemistry</span>
         </div>
-        <a href="https://drive.google.com/file/d/1oLPWcnH12lPri7zo_XEANZD-0lyhFVMX/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1oLPWcnH12lPri7zo_XEANZD-0lyhFVMX/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1oLPWcnH12lPri7zo_XEANZD-0lyhFVMX/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="exams">
@@ -1281,9 +1395,14 @@
           <span class="resource-tag senior">Senior Secondary</span>
           <span class="resource-tag">Business Studies</span>
         </div>
-        <a href="https://drive.google.com/file/d/14kvO2Tr6y5goD-UWyarYxc7mQAzZCOnQ/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/14kvO2Tr6y5goD-UWyarYxc7mQAzZCOnQ/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/14kvO2Tr6y5goD-UWyarYxc7mQAzZCOnQ/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="exams">
@@ -1295,9 +1414,14 @@
           <span class="resource-tag senior">Senior Secondary</span>
           <span class="resource-tag">Biology</span>
         </div>
-        <a href="https://drive.google.com/file/d/1M8LUijJU0f0CkjWtWM2wy5Zgj3DGuje7/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1M8LUijJU0f0CkjWtWM2wy5Zgj3DGuje7/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1M8LUijJU0f0CkjWtWM2wy5Zgj3DGuje7/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="exams">
@@ -1309,9 +1433,14 @@
           <span class="resource-tag senior">Senior Secondary</span>
           <span class="resource-tag">Community Service</span>
         </div>
-        <a href="https://drive.google.com/file/d/1S9DbHUxAciKYz3kPsDhw5T0OL0LTuTq-/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1S9DbHUxAciKYz3kPsDhw5T0OL0LTuTq-/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1S9DbHUxAciKYz3kPsDhw5T0OL0LTuTq-/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <!-- SENIOR SECONDARY — GRADE 10 TERM 2 CBC HQ SERIES 1 ENDTERM EXAMS -->
@@ -1326,9 +1455,14 @@
           <span class="resource-tag">Physics</span>
           <span class="resource-tag new-badge">New</span>
         </div>
-        <a href="https://drive.google.com/file/d/1_EmFDMXWdb8lyl5hw1dIFRYkT1xPfonq/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1_EmFDMXWdb8lyl5hw1dIFRYkT1xPfonq/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1_EmFDMXWdb8lyl5hw1dIFRYkT1xPfonq/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="exams">
@@ -1341,9 +1475,14 @@
           <span class="resource-tag">History</span>
           <span class="resource-tag new-badge">New</span>
         </div>
-        <a href="https://drive.google.com/file/d/1ikT1vyPTqr-sAutB4QQ2xe7pLZKLCVI1/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1ikT1vyPTqr-sAutB4QQ2xe7pLZKLCVI1/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1ikT1vyPTqr-sAutB4QQ2xe7pLZKLCVI1/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="exams">
@@ -1356,9 +1495,14 @@
           <span class="resource-tag">Literature</span>
           <span class="resource-tag new-badge">New</span>
         </div>
-        <a href="https://drive.google.com/file/d/1SgrDAfPuetYMhcSxbgb_xaUv0fhG95wx/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1SgrDAfPuetYMhcSxbgb_xaUv0fhG95wx/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1SgrDAfPuetYMhcSxbgb_xaUv0fhG95wx/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="exams">
@@ -1371,9 +1515,14 @@
           <span class="resource-tag">Geography</span>
           <span class="resource-tag new-badge">New</span>
         </div>
-        <a href="https://drive.google.com/file/d/1BoB0TJBZDdGMFkmOtCWlJTGrMrhBcfSH/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1BoB0TJBZDdGMFkmOtCWlJTGrMrhBcfSH/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1BoB0TJBZDdGMFkmOtCWlJTGrMrhBcfSH/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="exams">
@@ -1386,9 +1535,14 @@
           <span class="resource-tag">Community Service</span>
           <span class="resource-tag new-badge">New</span>
         </div>
-        <a href="https://drive.google.com/file/d/1lOt-fEA3Gq6zJ8E7NJsoK0JeosiPzAnv/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1lOt-fEA3Gq6zJ8E7NJsoK0JeosiPzAnv/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1lOt-fEA3Gq6zJ8E7NJsoK0JeosiPzAnv/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="exams">
@@ -1401,9 +1555,14 @@
           <span class="resource-tag">Chemistry</span>
           <span class="resource-tag new-badge">New</span>
         </div>
-        <a href="https://drive.google.com/file/d/11WfXhUrFNGTpujEh-Fgx10c19O7i3OZr/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/11WfXhUrFNGTpujEh-Fgx10c19O7i3OZr/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/11WfXhUrFNGTpujEh-Fgx10c19O7i3OZr/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <!-- JUNIOR SECONDARY — GRADE 7 DISTINCTION EXAMS -->
@@ -1417,9 +1576,14 @@
           <span class="resource-tag junior">Junior Secondary</span>
           <span class="resource-tag">Social Studies</span>
         </div>
-        <a href="https://drive.google.com/file/d/1wSz9N-puteF5ZdoT7yn-CeMPj9qGZbd0/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1wSz9N-puteF5ZdoT7yn-CeMPj9qGZbd0/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1wSz9N-puteF5ZdoT7yn-CeMPj9qGZbd0/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="junior" data-type="exams">
@@ -1431,9 +1595,14 @@
           <span class="resource-tag junior">Junior Secondary</span>
           <span class="resource-tag">Pre Technical</span>
         </div>
-        <a href="https://drive.google.com/file/d/1qhN0bYdN0_dO4S-BWqtxZsXseB0RkDDf/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1qhN0bYdN0_dO4S-BWqtxZsXseB0RkDDf/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1qhN0bYdN0_dO4S-BWqtxZsXseB0RkDDf/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="junior" data-type="exams">
@@ -1445,9 +1614,14 @@
           <span class="resource-tag junior">Junior Secondary</span>
           <span class="resource-tag">Pre Technical</span>
         </div>
-        <a href="https://drive.google.com/file/d/1zk6u9sh1TQIXnWTFt1r-XjRQGrOXEBp6/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1zk6u9sh1TQIXnWTFt1r-XjRQGrOXEBp6/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1zk6u9sh1TQIXnWTFt1r-XjRQGrOXEBp6/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="junior" data-type="exams">
@@ -1459,9 +1633,14 @@
           <span class="resource-tag junior">Junior Secondary</span>
           <span class="resource-tag">Marking Scheme</span>
         </div>
-        <a href="https://drive.google.com/file/d/1nvTVcbPPQlgEBDlRAOyNF1WlnKUwPNXA/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1nvTVcbPPQlgEBDlRAOyNF1WlnKUwPNXA/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1nvTVcbPPQlgEBDlRAOyNF1WlnKUwPNXA/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="junior" data-type="exams">
@@ -1473,9 +1652,14 @@
           <span class="resource-tag junior">Junior Secondary</span>
           <span class="resource-tag">Kiswahili</span>
         </div>
-        <a href="https://drive.google.com/file/d/1zOcv3TrXtKg3FtzYYGbT0k_f3NpjcP4v/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1zOcv3TrXtKg3FtzYYGbT0k_f3NpjcP4v/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1zOcv3TrXtKg3FtzYYGbT0k_f3NpjcP4v/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="junior" data-type="exams">
@@ -1487,9 +1671,14 @@
           <span class="resource-tag junior">Junior Secondary</span>
           <span class="resource-tag">Kiswahili</span>
         </div>
-        <a href="https://drive.google.com/file/d/1YXv0T06D_bEAw9df2GnCw-ol0IHfYODg/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1YXv0T06D_bEAw9df2GnCw-ol0IHfYODg/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1YXv0T06D_bEAw9df2GnCw-ol0IHfYODg/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="junior" data-type="exams">
@@ -1501,9 +1690,14 @@
           <span class="resource-tag junior">Junior Secondary</span>
           <span class="resource-tag">Integrated Science</span>
         </div>
-        <a href="https://drive.google.com/file/d/1CIJAk-1XcqF2ByCnmDK7uzReKIjRWuRF/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1CIJAk-1XcqF2ByCnmDK7uzReKIjRWuRF/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1CIJAk-1XcqF2ByCnmDK7uzReKIjRWuRF/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="junior" data-type="exams">
@@ -1515,9 +1709,14 @@
           <span class="resource-tag junior">Junior Secondary</span>
           <span class="resource-tag">Integrated Science</span>
         </div>
-        <a href="https://drive.google.com/file/d/1dDpRguFs6IqHg9zR4wy9ge9H_3v4Mt0_/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1dDpRguFs6IqHg9zR4wy9ge9H_3v4Mt0_/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1dDpRguFs6IqHg9zR4wy9ge9H_3v4Mt0_/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="junior" data-type="exams">
@@ -1529,9 +1728,14 @@
           <span class="resource-tag junior">Junior Secondary</span>
           <span class="resource-tag">English</span>
         </div>
-        <a href="https://drive.google.com/file/d/1UO7aGVZ3oigGqam6ZNWmh8-DV3C6WBiK/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1UO7aGVZ3oigGqam6ZNWmh8-DV3C6WBiK/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1UO7aGVZ3oigGqam6ZNWmh8-DV3C6WBiK/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="junior" data-type="exams">
@@ -1543,9 +1747,14 @@
           <span class="resource-tag junior">Junior Secondary</span>
           <span class="resource-tag">Creative Arts</span>
         </div>
-        <a href="https://drive.google.com/file/d/1nmuY59EaHlF5kcIS7N_I9zdXu3NbIn2s/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1nmuY59EaHlF5kcIS7N_I9zdXu3NbIn2s/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1nmuY59EaHlF5kcIS7N_I9zdXu3NbIn2s/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="junior" data-type="exams">
@@ -1557,9 +1766,14 @@
           <span class="resource-tag junior">Junior Secondary</span>
           <span class="resource-tag">CRE</span>
         </div>
-        <a href="https://drive.google.com/file/d/1PKH662fhBQe1BlLbXWZ5iMi_s6_354qn/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1PKH662fhBQe1BlLbXWZ5iMi_s6_354qn/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1PKH662fhBQe1BlLbXWZ5iMi_s6_354qn/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="junior" data-type="exams">
@@ -1571,9 +1785,14 @@
           <span class="resource-tag junior">Junior Secondary</span>
           <span class="resource-tag">English</span>
         </div>
-        <a href="https://drive.google.com/file/d/1dARbGuV0A01fgAbEIJxLMf_1iQLFkPkJ/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1dARbGuV0A01fgAbEIJxLMf_1iQLFkPkJ/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1dARbGuV0A01fgAbEIJxLMf_1iQLFkPkJ/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="junior" data-type="exams">
@@ -1585,9 +1804,14 @@
           <span class="resource-tag junior">Junior Secondary</span>
           <span class="resource-tag">CRE</span>
         </div>
-        <a href="https://drive.google.com/file/d/1ONYavkHVUcgb3kaxKF3r-iG-cY3CcaDm/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1ONYavkHVUcgb3kaxKF3r-iG-cY3CcaDm/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1ONYavkHVUcgb3kaxKF3r-iG-cY3CcaDm/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="junior" data-type="exams">
@@ -1599,9 +1823,14 @@
           <span class="resource-tag junior">Junior Secondary</span>
           <span class="resource-tag">Agriculture</span>
         </div>
-        <a href="https://drive.google.com/file/d/1KT7xsbIdoBbXbet-DWt1k6jIpKwT8qO3/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1KT7xsbIdoBbXbet-DWt1k6jIpKwT8qO3/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1KT7xsbIdoBbXbet-DWt1k6jIpKwT8qO3/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="junior" data-type="exams">
@@ -1613,9 +1842,14 @@
           <span class="resource-tag junior">Junior Secondary</span>
           <span class="resource-tag">Agriculture</span>
         </div>
-        <a href="https://drive.google.com/file/d/1yLngAWwOIu6liZI-ySexwrarvE9hZAYL/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1yLngAWwOIu6liZI-ySexwrarvE9hZAYL/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1yLngAWwOIu6liZI-ySexwrarvE9hZAYL/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="junior" data-type="exams">
@@ -1627,9 +1861,14 @@
           <span class="resource-tag junior">Junior Secondary</span>
           <span class="resource-tag">Mathematics</span>
         </div>
-        <a href="https://drive.google.com/file/d/13ecsxzfmTjqgCSuIaugZrRNYpl3k61zK/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/13ecsxzfmTjqgCSuIaugZrRNYpl3k61zK/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/13ecsxzfmTjqgCSuIaugZrRNYpl3k61zK/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="primary" data-type="exams">
@@ -1641,9 +1880,14 @@
           <span class="resource-tag primary">Primary</span>
           <span class="resource-tag">Mathematics</span>
         </div>
-        <a href="https://drive.google.com/file/d/1jqM5Uw-mJb390T6ctcdPZLZmebA1YSH3/view?usp=drivesdk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1jqM5Uw-mJb390T6ctcdPZLZmebA1YSH3/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/file/d/1jqM5Uw-mJb390T6ctcdPZLZmebA1YSH3/view?usp=drivesdk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
     </div>
@@ -1742,9 +1986,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1ldHz8wd_j0bO3WozAWL_SI91uJ62IyKx" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1ldHz8wd_j0bO3WozAWL_SI91uJ62IyKx/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1ldHz8wd_j0bO3WozAWL_SI91uJ62IyKx" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
@@ -1758,9 +2007,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1AocKVNfvGSx-63xcfrMilSEGNAb5p9s1" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1AocKVNfvGSx-63xcfrMilSEGNAb5p9s1/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1AocKVNfvGSx-63xcfrMilSEGNAb5p9s1" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
@@ -1774,9 +2028,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1n1fD97paJsYn3zxzq0KlCL5-jvF3HKu2" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1n1fD97paJsYn3zxzq0KlCL5-jvF3HKu2/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1n1fD97paJsYn3zxzq0KlCL5-jvF3HKu2" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
@@ -1790,9 +2049,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1Eo_pMlQ2HqzYsGqaBd9zJjE6f3cHET4Y" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1Eo_pMlQ2HqzYsGqaBd9zJjE6f3cHET4Y/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1Eo_pMlQ2HqzYsGqaBd9zJjE6f3cHET4Y" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
@@ -1806,9 +2070,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1vttoLsH5BuGfV1asdkjdPzJhQhdbgXoU" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1vttoLsH5BuGfV1asdkjdPzJhQhdbgXoU/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1vttoLsH5BuGfV1asdkjdPzJhQhdbgXoU" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
@@ -1822,9 +2091,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1nxqZcpFADAm6LSV528W1AfECQaMwx4Xp" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1nxqZcpFADAm6LSV528W1AfECQaMwx4Xp/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1nxqZcpFADAm6LSV528W1AfECQaMwx4Xp" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
@@ -1838,9 +2112,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1NjSVMyq0caEG40HZe3mKWJSP68njVGvv" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1NjSVMyq0caEG40HZe3mKWJSP68njVGvv/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1NjSVMyq0caEG40HZe3mKWJSP68njVGvv" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
@@ -1854,9 +2133,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1YRNwYHQXzAJxFhnruEofA8MAY0s9-Zhk" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1YRNwYHQXzAJxFhnruEofA8MAY0s9-Zhk/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1YRNwYHQXzAJxFhnruEofA8MAY0s9-Zhk" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
@@ -1870,9 +2154,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1uJKtmH_G1-L8ek8Zhu3jt0quSlntlaMV" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1uJKtmH_G1-L8ek8Zhu3jt0quSlntlaMV/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1uJKtmH_G1-L8ek8Zhu3jt0quSlntlaMV" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
@@ -1886,9 +2175,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1lzMCGrxuKm3_t2OkjaRw9XNr72UaKd6u" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1lzMCGrxuKm3_t2OkjaRw9XNr72UaKd6u/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1lzMCGrxuKm3_t2OkjaRw9XNr72UaKd6u" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
@@ -1902,9 +2196,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1-O4nJ8SFpcQfyUSHlqQ_fWzaklxUIwIT" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1-O4nJ8SFpcQfyUSHlqQ_fWzaklxUIwIT/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1-O4nJ8SFpcQfyUSHlqQ_fWzaklxUIwIT" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
@@ -1918,9 +2217,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=17XSz5e46fyafw46PQan0S01Hi2pavBF5" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/17XSz5e46fyafw46PQan0S01Hi2pavBF5/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=17XSz5e46fyafw46PQan0S01Hi2pavBF5" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
@@ -1934,9 +2238,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1iwufsP0QCYyzcjPOQQ_I_uFm1u6YT4Iq" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1iwufsP0QCYyzcjPOQQ_I_uFm1u6YT4Iq/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1iwufsP0QCYyzcjPOQQ_I_uFm1u6YT4Iq" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
@@ -1950,9 +2259,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1bE-7FLesaYqYsjLmaZyMxu3pKQaHDLcu" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1bE-7FLesaYqYsjLmaZyMxu3pKQaHDLcu/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1bE-7FLesaYqYsjLmaZyMxu3pKQaHDLcu" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
@@ -1966,9 +2280,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1ZVVuLzJDeeO57PxfESOvXnEjAnlW1lxb" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1ZVVuLzJDeeO57PxfESOvXnEjAnlW1lxb/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1ZVVuLzJDeeO57PxfESOvXnEjAnlW1lxb" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
@@ -1982,9 +2301,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1TuXoEukzh3U8SRuNYylFMRd9j41LKq-s" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1TuXoEukzh3U8SRuNYylFMRd9j41LKq-s/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1TuXoEukzh3U8SRuNYylFMRd9j41LKq-s" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
@@ -1998,9 +2322,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1XKX-VZQDJaJUgqDrL6GWh50cUXP6dN2U" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1XKX-VZQDJaJUgqDrL6GWh50cUXP6dN2U/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1XKX-VZQDJaJUgqDrL6GWh50cUXP6dN2U" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
@@ -2014,9 +2343,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1UOGtNj5ikb3hN_vVWlqMXIDFsrWf8BHM" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1UOGtNj5ikb3hN_vVWlqMXIDFsrWf8BHM/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1UOGtNj5ikb3hN_vVWlqMXIDFsrWf8BHM" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
@@ -2030,9 +2364,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1LhEpyDjkFBv8UvJQTtgnD-uZRcbUv6O7" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1LhEpyDjkFBv8UvJQTtgnD-uZRcbUv6O7/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1LhEpyDjkFBv8UvJQTtgnD-uZRcbUv6O7" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
@@ -2046,9 +2385,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1H9aRw2MBibNVgSHyqxRBL7fHZwjlV2RZ" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1H9aRw2MBibNVgSHyqxRBL7fHZwjlV2RZ/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1H9aRw2MBibNVgSHyqxRBL7fHZwjlV2RZ" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
@@ -2062,9 +2406,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1CwNkwuZGicxOKtBDDf_4Hirs3AsScZgI" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1CwNkwuZGicxOKtBDDf_4Hirs3AsScZgI/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1CwNkwuZGicxOKtBDDf_4Hirs3AsScZgI" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
@@ -2078,9 +2427,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1sA0SW5cuwvbS_yRuGcntZan2tTXZC-hl" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1sA0SW5cuwvbS_yRuGcntZan2tTXZC-hl/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1sA0SW5cuwvbS_yRuGcntZan2tTXZC-hl" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
@@ -2094,9 +2448,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=14gyKSE7ZryjXQAHtN_xc5dWFnaEne0V0" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/14gyKSE7ZryjXQAHtN_xc5dWFnaEne0V0/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=14gyKSE7ZryjXQAHtN_xc5dWFnaEne0V0" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
@@ -2110,9 +2469,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=14kHEDLk00wjIDk9JhKxC-BjMFcEsUOxx" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/14kHEDLk00wjIDk9JhKxC-BjMFcEsUOxx/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=14kHEDLk00wjIDk9JhKxC-BjMFcEsUOxx" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
@@ -2126,9 +2490,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1O-02zJWrvvMywUUgFlSHOPhK63oEN0ay" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1O-02zJWrvvMywUUgFlSHOPhK63oEN0ay/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1O-02zJWrvvMywUUgFlSHOPhK63oEN0ay" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
@@ -2142,9 +2511,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1m9YFW1Osl6FJOVX4w1jekf8e9DA7nfBs" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1m9YFW1Osl6FJOVX4w1jekf8e9DA7nfBs/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1m9YFW1Osl6FJOVX4w1jekf8e9DA7nfBs" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
@@ -2158,9 +2532,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1eCl9TPpjhPeT0nZw1ptLcyE4Uvt8a8Og" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1eCl9TPpjhPeT0nZw1ptLcyE4Uvt8a8Og/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1eCl9TPpjhPeT0nZw1ptLcyE4Uvt8a8Og" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
@@ -2174,9 +2553,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1H31oRUm65ZSxmetSutHxAYtHQ8N-0Bg8" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1H31oRUm65ZSxmetSutHxAYtHQ8N-0Bg8/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1H31oRUm65ZSxmetSutHxAYtHQ8N-0Bg8" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
@@ -2190,9 +2574,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1bdd7StSquclp7ls3nZPdJLpLi6CzLu35" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1bdd7StSquclp7ls3nZPdJLpLi6CzLu35/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1bdd7StSquclp7ls3nZPdJLpLi6CzLu35" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="lessonplans" data-term="term3" data-subject="History and Citizenship">
@@ -2206,9 +2595,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1AWLljk1ihCq9PM3V9gN1IHutXjAqqBMt" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1AWLljk1ihCq9PM3V9gN1IHutXjAqqBMt/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1AWLljk1ihCq9PM3V9gN1IHutXjAqqBMt" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="schemes" data-term="term3" data-subject="Geography">
@@ -2222,9 +2616,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://docs.google.com/document/d/1VnHCVBs4vR23CxfyDfmV392Pe9G1UD5H/export?format=pdf" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://docs.google.com/document/d/1VnHCVBs4vR23CxfyDfmV392Pe9G1UD5H/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://docs.google.com/document/d/1VnHCVBs4vR23CxfyDfmV392Pe9G1UD5H/export?format=pdf" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="schemes" data-term="term3" data-subject="History and Citizenship">
@@ -2238,9 +2637,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://docs.google.com/document/d/118Fh7mvJOwqbnnRpB4qG5Ung3I0rAR9x/export?format=pdf" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://docs.google.com/document/d/118Fh7mvJOwqbnnRpB4qG5Ung3I0rAR9x/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://docs.google.com/document/d/118Fh7mvJOwqbnnRpB4qG5Ung3I0rAR9x/export?format=pdf" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="schemes" data-term="term3" data-subject="Biology">
@@ -2254,9 +2658,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://docs.google.com/document/d/1Vg9m4Xr65F__Asp3Ariv608HgjBWAEap/export?format=pdf" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://docs.google.com/document/d/1Vg9m4Xr65F__Asp3Ariv608HgjBWAEap/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://docs.google.com/document/d/1Vg9m4Xr65F__Asp3Ariv608HgjBWAEap/export?format=pdf" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="schemes" data-term="term3" data-subject="Chemistry">
@@ -2270,9 +2679,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://docs.google.com/document/d/1uzPB_73gAsaAzMQf1BCZz-DPT9tKeqsG/export?format=pdf" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://docs.google.com/document/d/1uzPB_73gAsaAzMQf1BCZz-DPT9tKeqsG/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://docs.google.com/document/d/1uzPB_73gAsaAzMQf1BCZz-DPT9tKeqsG/export?format=pdf" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="schemes" data-term="term3" data-subject="English">
@@ -2286,9 +2700,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://docs.google.com/document/d/1dkAYgfzb-iM-3ZAK3wC53rw8RM72kWWg/export?format=pdf" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://docs.google.com/document/d/1dkAYgfzb-iM-3ZAK3wC53rw8RM72kWWg/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://docs.google.com/document/d/1dkAYgfzb-iM-3ZAK3wC53rw8RM72kWWg/export?format=pdf" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="schemes" data-term="term3" data-subject="Christian Religious Education">
@@ -2302,9 +2721,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://docs.google.com/document/d/1lgD8hB5Hn3RGYjruQMQS7jqk56zapvnD/export?format=pdf" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://docs.google.com/document/d/1lgD8hB5Hn3RGYjruQMQS7jqk56zapvnD/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://docs.google.com/document/d/1lgD8hB5Hn3RGYjruQMQS7jqk56zapvnD/export?format=pdf" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="schemes" data-term="term3" data-subject="Business Studies">
@@ -2318,9 +2742,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://docs.google.com/document/d/1SHeromdJzFMi3udMALVcRRG1bHPemK1G/export?format=pdf" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://docs.google.com/document/d/1SHeromdJzFMi3udMALVcRRG1bHPemK1G/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://docs.google.com/document/d/1SHeromdJzFMi3udMALVcRRG1bHPemK1G/export?format=pdf" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="junior" data-type="curriculumdesigns" data-term="all" data-subject="Mathematics">
@@ -2334,9 +2763,14 @@
         <div class="resource-tags">
           <span class="resource-tag junior">Junior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1VEmzDyJqK6zps2S_MpheW4fbZboftn1d" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1VEmzDyJqK6zps2S_MpheW4fbZboftn1d/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1VEmzDyJqK6zps2S_MpheW4fbZboftn1d" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="junior" data-type="curriculumdesigns" data-term="all" data-subject="English">
@@ -2350,9 +2784,14 @@
         <div class="resource-tags">
           <span class="resource-tag junior">Junior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1J6K42FDSqzjWFYbpzGQ-cXpLXUwtz2--" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1J6K42FDSqzjWFYbpzGQ-cXpLXUwtz2--/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1J6K42FDSqzjWFYbpzGQ-cXpLXUwtz2--" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="junior" data-type="curriculumdesigns" data-term="all" data-subject="Kiswahili">
@@ -2366,9 +2805,14 @@
         <div class="resource-tags">
           <span class="resource-tag junior">Junior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=18b4mF1eqpPyb0TijVI3pscH7sEW1ztVh" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/18b4mF1eqpPyb0TijVI3pscH7sEW1ztVh/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=18b4mF1eqpPyb0TijVI3pscH7sEW1ztVh" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="junior" data-type="curriculumdesigns" data-term="all" data-subject="Christian Religious Education">
@@ -2382,9 +2826,14 @@
         <div class="resource-tags">
           <span class="resource-tag junior">Junior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1Yq4qNSVAmaO_baj8IU_6kv1Mdi_kJkeI" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1Yq4qNSVAmaO_baj8IU_6kv1Mdi_kJkeI/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1Yq4qNSVAmaO_baj8IU_6kv1Mdi_kJkeI" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="junior" data-type="curriculumdesigns" data-term="all" data-subject="Islamic Religious Education">
@@ -2398,9 +2847,14 @@
         <div class="resource-tags">
           <span class="resource-tag junior">Junior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1OAIXpdZLspmzZcjjYXxJLeEmekO7mPkA" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1OAIXpdZLspmzZcjjYXxJLeEmekO7mPkA/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1OAIXpdZLspmzZcjjYXxJLeEmekO7mPkA" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="junior" data-type="curriculumdesigns" data-term="all" data-subject="Hindu Religious Education">
@@ -2414,9 +2868,14 @@
         <div class="resource-tags">
           <span class="resource-tag junior">Junior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1oG92zrUKax9NvtPc2vNFDuSdYjYnyuVS" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1oG92zrUKax9NvtPc2vNFDuSdYjYnyuVS/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1oG92zrUKax9NvtPc2vNFDuSdYjYnyuVS" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="junior" data-type="curriculumdesigns" data-term="all" data-subject="French">
@@ -2430,9 +2889,14 @@
         <div class="resource-tags">
           <span class="resource-tag junior">Junior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1U7ixCynGEgyasHkGTZpHYQRzh49lUW3G" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1U7ixCynGEgyasHkGTZpHYQRzh49lUW3G/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1U7ixCynGEgyasHkGTZpHYQRzh49lUW3G" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="junior" data-type="curriculumdesigns" data-term="all" data-subject="Creative Arts">
@@ -2446,9 +2910,14 @@
         <div class="resource-tags">
           <span class="resource-tag junior">Junior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1iOgSA3Nj_xnmTV6yVhPMr83ajOzlpMI5" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1iOgSA3Nj_xnmTV6yVhPMr83ajOzlpMI5/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1iOgSA3Nj_xnmTV6yVhPMr83ajOzlpMI5" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="junior" data-type="curriculumdesigns" data-term="all" data-subject="Pre-Technical Studies">
@@ -2462,9 +2931,14 @@
         <div class="resource-tags">
           <span class="resource-tag junior">Junior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1J-97v0T3l_956Wy8tauJ3YHsseNNFwMF" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1J-97v0T3l_956Wy8tauJ3YHsseNNFwMF/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1J-97v0T3l_956Wy8tauJ3YHsseNNFwMF" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="junior" data-type="curriculumdesigns" data-term="all" data-subject="Integrated Science">
@@ -2478,9 +2952,14 @@
         <div class="resource-tags">
           <span class="resource-tag junior">Junior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=19OKMsUcOQnVfSvAwTPt3B1RirAu5Tw0x" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/19OKMsUcOQnVfSvAwTPt3B1RirAu5Tw0x/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=19OKMsUcOQnVfSvAwTPt3B1RirAu5Tw0x" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="junior" data-type="curriculumdesigns" data-term="all" data-subject="Agriculture">
@@ -2494,9 +2973,14 @@
         <div class="resource-tags">
           <span class="resource-tag junior">Junior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1yU-KdzGk-PBmCnzePh5HURIHCqjeTISz" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1yU-KdzGk-PBmCnzePh5HURIHCqjeTISz/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1yU-KdzGk-PBmCnzePh5HURIHCqjeTISz" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="junior" data-type="curriculumdesigns" data-term="all" data-subject="Social Studies">
@@ -2510,9 +2994,14 @@
         <div class="resource-tags">
           <span class="resource-tag junior">Junior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1olGENK2KrwgHQfNNX2lz6t9j3wXBUULp" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1olGENK2KrwgHQfNNX2lz6t9j3wXBUULp/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1olGENK2KrwgHQfNNX2lz6t9j3wXBUULp" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="junior" data-type="curriculumdesigns" data-term="all" data-subject="Mandarin">
@@ -2526,9 +3015,14 @@
         <div class="resource-tags">
           <span class="resource-tag junior">Junior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1BQBPi4WX1VS1efUMkK9K-2OMbZqrH7ma" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1BQBPi4WX1VS1efUMkK9K-2OMbZqrH7ma/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1BQBPi4WX1VS1efUMkK9K-2OMbZqrH7ma" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="junior" data-type="curriculumdesigns" data-term="all" data-subject="German">
@@ -2542,9 +3036,14 @@
         <div class="resource-tags">
           <span class="resource-tag junior">Junior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1D9pSPMBLB5PMlNu_l_Uuf6jbMux2F1DM" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1D9pSPMBLB5PMlNu_l_Uuf6jbMux2F1DM/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1D9pSPMBLB5PMlNu_l_Uuf6jbMux2F1DM" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="curriculumdesigns" data-term="all" data-subject="English Literature">
@@ -2558,9 +3057,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1VW4Xu-QV9aPsk8TeBYqIX6QuMiLJm5cd" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1VW4Xu-QV9aPsk8TeBYqIX6QuMiLJm5cd/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1VW4Xu-QV9aPsk8TeBYqIX6QuMiLJm5cd" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="curriculumdesigns" data-term="all" data-subject="Biology">
@@ -2574,9 +3078,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1o_K0yOebd8IqecfVWwBzrXsZOpItuedv" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1o_K0yOebd8IqecfVWwBzrXsZOpItuedv/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1o_K0yOebd8IqecfVWwBzrXsZOpItuedv" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="curriculumdesigns" data-term="all" data-subject="Geography">
@@ -2590,9 +3099,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1rVuLKCSatmi3WbCZ7oypeJnU9qB13n-D" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1rVuLKCSatmi3WbCZ7oypeJnU9qB13n-D/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1rVuLKCSatmi3WbCZ7oypeJnU9qB13n-D" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="curriculumdesigns" data-term="all" data-subject="Chemistry">
@@ -2606,9 +3120,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1zn2wcT9Z-H6NMMRxyBqpsJuikELxPGxH" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1zn2wcT9Z-H6NMMRxyBqpsJuikELxPGxH/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1zn2wcT9Z-H6NMMRxyBqpsJuikELxPGxH" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="curriculumdesigns" data-term="all" data-subject="History and Citizenship">
@@ -2622,9 +3141,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1rlnJYcc82o_11FBAD1FeMdRjHUY7dpNX" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1rlnJYcc82o_11FBAD1FeMdRjHUY7dpNX/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1rlnJYcc82o_11FBAD1FeMdRjHUY7dpNX" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="curriculumdesigns" data-term="all" data-subject="English">
@@ -2638,9 +3162,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=1a-O5DPcyRrNxOGSm7YhTNYJpUyfNohly" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/1a-O5DPcyRrNxOGSm7YhTNYJpUyfNohly/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1a-O5DPcyRrNxOGSm7YhTNYJpUyfNohly" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
       <div class="resource-card" data-level="senior" data-type="curriculumdesigns" data-term="all" data-subject="Mathematics">
@@ -2654,9 +3183,14 @@
         <div class="resource-tags">
           <span class="resource-tag senior">Senior Secondary</span>
         </div>
-        <a href="https://drive.google.com/uc?export=download&id=13xM9JfHkn4z1KEemTXxwJQo80248OZc5" target="_blank" class="resource-download">
-          <i class="ti ti-download"></i> Download PDF
-        </a>
+        <div class="resource-actions">
+          <a href="https://drive.google.com/file/d/13xM9JfHkn4z1KEemTXxwJQo80248OZc5/preview" target="_blank" class="resource-preview">
+            <i class="ti ti-eye"></i> Preview
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=13xM9JfHkn4z1KEemTXxwJQo80248OZc5" target="_blank" class="resource-download">
+            <i class="ti ti-download"></i> Download PDF
+          </a>
+        </div>
       </div>
 
     </div>
