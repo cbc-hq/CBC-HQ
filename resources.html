@@ -458,7 +458,7 @@
       flex-wrap: wrap;
       margin-bottom: 16px;
     }
-    .level-tab, .t-level-tab {
+    .level-tab, .t-level-tab, .pp-level-tab {
       background: white;
       border: 2px solid var(--light-gray);
       color: var(--gray);
@@ -470,7 +470,8 @@
       transition: all 0.2s;
     }
     .level-tab.active, .level-tab:hover,
-    .t-level-tab.active, .t-level-tab:hover {
+    .t-level-tab.active, .t-level-tab:hover,
+    .pp-level-tab.active, .pp-level-tab:hover {
       background: var(--green-dark);
       border-color: var(--green-dark);
       color: white;
@@ -483,7 +484,7 @@
       border-bottom: 2px solid var(--light-gray);
       padding-bottom: 0;
     }
-    .type-tab, .t-type-tab {
+    .type-tab, .t-type-tab, .pp-type-tab {
       background: none;
       border: none;
       border-bottom: 3px solid transparent;
@@ -499,12 +500,12 @@
       transition: all 0.2s;
       border-radius: 6px 6px 0 0;
     }
-    .type-tab.active, .t-type-tab.active {
+    .type-tab.active, .t-type-tab.active, .pp-type-tab.active {
       color: var(--green-dark);
       border-bottom-color: var(--green-accent);
       background: white;
     }
-    .type-tab:hover, .t-type-tab:hover { color: var(--green-dark); }
+    .type-tab:hover, .t-type-tab:hover, .pp-type-tab:hover { color: var(--green-dark); }
 
     .term-tabs {
       display: flex;
@@ -600,15 +601,6 @@
     .resource-meta p { font-size: 13px; color: var(--gray); }
     .resource-tags { display: flex; gap: 6px; flex-wrap: wrap; }
 
-    .resource-stats {
-      display: flex;
-      gap: 14px;
-      margin-top: 8px;
-      font-size: 12px;
-      color: var(--gray);
-    }
-    .resource-stats span { display: flex; align-items: center; gap: 4px; }
-    .resource-stats i { font-size: 14px; }
     .resource-tag {
       font-size: 11px;
       font-weight: 600;
@@ -792,6 +784,7 @@
   <ul>
     <li><a href="index.html">Home</a></li>
     <li><a href="resources.html">Resources</a></li>
+    <li><a href="past-papers.html">Past Papers</a></li>
     <li><a href="https://youtube.com/@cbchq-q2f?si=9rKxe6Xb1U5Kwz94" target="_blank">Videos</a></li>
     <li><a href="index.html#levels">Levels</a></li>
     <li><a href="teachers.html">Teachers' Corner</a></li>
@@ -809,6 +802,7 @@
 <div class="mobile-menu" id="mobileMenu">
   <a href="index.html">Home</a>
   <a href="resources.html">Resources</a>
+  <a href="past-papers.html">Past Papers</a>
   <a href="https://youtube.com/@cbchq-q2f?si=9rKxe6Xb1U5Kwz94" target="_blank">Videos</a>
   <a href="index.html#levels">Levels</a>
   <a href="teachers.html">Teachers' Corner</a>
@@ -1901,17 +1895,52 @@
     if (tEmptyEl) tEmptyEl.style.display = visible === 0 ? 'flex' : 'none';
   }
 
+  // ── Past Papers & Revision filtering (kept separate from the other grids) ──
+  let currentPPLevel = 'primary';
+  let currentPPType = 'pastpapers';
+
+  function setPPLevel(level, btn) {
+    currentPPLevel = level;
+    document.querySelectorAll('.pp-level-tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    filterPPCards();
+  }
+
+  function setPPType(type, btn) {
+    currentPPType = type;
+    document.querySelectorAll('.pp-type-tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    filterPPCards();
+  }
+
+  function filterPPCards() {
+    const ppGridEl = document.getElementById('ppGrid');
+    if (!ppGridEl) return;
+    const cards = ppGridEl.querySelectorAll('.resource-card');
+    const searchEl = document.getElementById('ppSearch');
+    const term = searchEl ? searchEl.value.trim().toLowerCase() : '';
+    let visible = 0;
+    cards.forEach(card => {
+      const levelTypeMatch = card.dataset.level === currentPPLevel && card.dataset.type === currentPPType;
+      const textMatch = !term || card.innerText.toLowerCase().includes(term);
+      const match = levelTypeMatch && textMatch;
+      card.style.display = match ? '' : 'none';
+      if (match) visible++;
+    });
+    const ppEmptyEl = document.getElementById('ppEmptyState');
+    if (ppEmptyEl) ppEmptyEl.style.display = visible === 0 ? 'flex' : 'none';
+  }
+
   // Intercept download clicks
   document.addEventListener('DOMContentLoaded', function () {
     filterCards();
     refreshSubjectDropdown();
     filterTeacherCards();
-    initResourceCounters();
+    filterPPCards();
     document.querySelectorAll('.resource-download').forEach(function (link) {
       link.addEventListener('click', function (e) {
         e.preventDefault();
         pendingDownloadUrl = this.getAttribute('href');
-        pendingDownloadId = this.closest('.resource-card') ? this.closest('.resource-card').dataset.counterId : null;
         const user = window._currentUser ? window._currentUser() : null;
         if (!user) {
           window._pendingDownloadAfterAuth = true;
@@ -1922,79 +1951,6 @@
       });
     });
   });
-
-  // ── View / download counters (CounterAPI v1, no auth needed) ──
-  const COUNTER_NS = 'cbchq-b7f3-site';
-  const COUNTER_BASE = 'https://api.counterapi.dev/v1';
-  let pendingDownloadId = null;
-
-  function slugifyCounter(text) {
-    return text.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '').slice(0, 70);
-  }
-
-  function initResourceCounters() {
-    const cards = document.querySelectorAll('.resource-card');
-    cards.forEach(function (card) {
-      const titleEl = card.querySelector('h4');
-      if (!titleEl) return;
-      const id = slugifyCounter(titleEl.textContent);
-      card.dataset.counterId = id;
-
-      const stats = document.createElement('div');
-      stats.className = 'resource-stats';
-      stats.innerHTML =
-        '<span class="stat-views"><i class="ti ti-eye"></i><span class="stat-views-count">–</span></span>' +
-        '<span class="stat-downloads"><i class="ti ti-download"></i><span class="stat-downloads-count">–</span></span>';
-      const tagsEl = card.querySelector('.resource-tags');
-      if (tagsEl) tagsEl.insertAdjacentElement('afterend', stats);
-
-      // Show current download count without incrementing it
-      fetch(COUNTER_BASE + '/' + COUNTER_NS + '/dl-' + id)
-        .then(function (r) { return r.json(); })
-        .then(function (d) {
-          const el = stats.querySelector('.stat-downloads-count');
-          if (el) el.textContent = (d && typeof d.count === 'number') ? d.count : 0;
-        })
-        .catch(function () {
-          const el = stats.querySelector('.stat-downloads-count');
-          if (el) el.textContent = '0';
-        });
-    });
-
-    // Only counts a view once a card is actually scrolled into view (and only once per card per visit)
-    const seenViews = new Set();
-    const viewObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        const card = entry.target;
-        const id = card.dataset.counterId;
-        if (!id || seenViews.has(id)) return;
-        seenViews.add(id);
-        fetch(COUNTER_BASE + '/' + COUNTER_NS + '/view-' + id + '/up')
-          .then(function (r) { return r.json(); })
-          .then(function (d) {
-            const el = card.querySelector('.stat-views-count');
-            if (el) el.textContent = (d && typeof d.count === 'number') ? d.count : '';
-          })
-          .catch(function () {});
-        viewObserver.unobserve(card);
-      });
-    }, { threshold: 0.4 });
-
-    cards.forEach(function (card) { viewObserver.observe(card); });
-  }
-
-  function trackDownload(id) {
-    if (!id) return;
-    fetch(COUNTER_BASE + '/' + COUNTER_NS + '/dl-' + id + '/up')
-      .then(function (r) { return r.json(); })
-      .then(function (d) {
-        document.querySelectorAll('.resource-card[data-counter-id="' + id + '"] .stat-downloads-count').forEach(function (el) {
-          el.textContent = (d && typeof d.count === 'number') ? d.count : '';
-        });
-      })
-      .catch(function () {});
-  }
 
   function openAuthModal() {
     document.getElementById('authModal').classList.add('open');
@@ -2010,8 +1966,6 @@
     setTimeout(function () {
       if (pendingDownloadUrl) {
         window.open(pendingDownloadUrl, '_blank');
-        trackDownload(pendingDownloadId);
-        pendingDownloadId = null;
       }
       closeModal();
     }, 1500);
@@ -2041,7 +1995,7 @@
       <ul>
         <li><a href="resources.html">Notes</a></li>
         <li><a href="resources.html">Tests</a></li>
-        <li><a href="resources.html">Past exams</a></li>
+        <li><a href="past-papers.html">Past exams</a></li>
         <li><a href="https://youtube.com/@cbchq-q2f?si=9rKxe6Xb1U5Kwz94" target="_blank">Videos</a></li>
       </ul>
     </div>
